@@ -89,9 +89,9 @@
       <category term="democate" scheme="http://yoursite.com/categories/cate/democate/"/>
     
     
-      <category term="Demo" scheme="http://yoursite.com/tags/Demo/"/>
-    
       <category term="Hello" scheme="http://yoursite.com/tags/Hello/"/>
+    
+      <category term="Demo" scheme="http://yoursite.com/tags/Demo/"/>
     
   </entry>
   

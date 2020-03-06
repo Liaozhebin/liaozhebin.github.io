@@ -710,8 +710,8 @@ GFM中可以显示的展示diff效果。使用绿色表示新增，红色表示�
         <category>democate</category>
       </categories>
       <tags>
-        <tag>Demo</tag>
         <tag>Hello</tag>
+        <tag>Demo</tag>
       </tags>
   </entry>
   <entry>

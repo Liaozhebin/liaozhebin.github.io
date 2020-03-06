@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Bingo | zhrbin</title>
+  <icon>http://yoursite.com/icon.png</icon>
+  <subtitle>随笔行舟,记录分享</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-03-03T13:50:17.515Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Liaozhebin</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>list</title>
+    <link href="http://yoursite.com/2020/03/03/list/"/>
+    <id>http://yoursite.com/2020/03/03/list/</id>
+    <published>2020-03-03T09:04:11.000Z</published>
+    <updated>2020-03-03T13:50:17.515Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;title1&lt;/h1&gt;
+&lt;h2 id=&quot;title2&quot;&gt;title2&lt;/h2&gt;
+&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Github Flavored Markdown Demo</title>
+    <link href="http://yoursite.com/2020/03/03/Github-Flavored-Markdown-Demo/"/>
+    <id>http://yoursite.com/2020/03/03/Github-Flavored-Markdown-Demo/</id>
+    <published>2020-03-03T08:35:23.000Z</published>
+    <updated>2020-03-06T14:04:48.781Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1&gt;README&lt;/h1&gt;
+&lt;p&gt;该文件用来测试和展示书写README的各种markdown语法。GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之为&lt;code&gt;GitHub Flavored Markdown&lt;/code&gt;。简称&lt;code&gt;GFM&lt;/code&gt;，GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+    
+      <category term="cate" scheme="http://yoursite.com/categories/cate/"/>
+    
+      <category term="cate2" scheme="http://yoursite.com/categories/cate/cate2/"/>
+    
+    
+      <category term="Demo" scheme="http://yoursite.com/tags/Demo/"/>
+    
+      <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hello hexo</title>
+    <link href="http://yoursite.com/2020/03/01/hello-hexo/"/>
+    <id>http://yoursite.com/2020/03/01/hello-hexo/</id>
+    <published>2020-03-01T10:04:46.000Z</published>
+    <updated>2020-03-03T13:50:23.377Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;==这里是目录，可以快速跳转==&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;!-- toc --&gt;
+    
+    </summary>
+    
+    
+      <category term="cate" scheme="http://yoursite.com/categories/cate/"/>
+    
+      <category term="democate" scheme="http://yoursite.com/categories/cate/democate/"/>
+    
+    
+      <category term="Demo" scheme="http://yoursite.com/tags/Demo/"/>
+    
+      <category term="Hello" scheme="http://yoursite.com/tags/Hello/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2010/04/01/hello-world/"/>
+    <id>http://yoursite.com/2010/04/01/hello-world/</id>
+    <published>2010-03-31T16:00:00.000Z</published>
+    <updated>2018-04-30T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      有东西被加密了，请输入密码查看
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>

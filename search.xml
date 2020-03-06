@@ -77,6 +77,10 @@
 <li><a href="#%E8%A1%A8%E6%83%85">表情</a></li>
 <li><a href="#diff%E8%AF%AD%E6%B3%95">diff语法</a></li>
 </ul>
+<h3 id="文章编辑">文章编辑</h3>
+<h4 id="文章简介生成：">文章简介生成：</h4>
+<p>生成简介：<br>
+在文章中使用 <code>&lt;!--more--&gt;</code> 手动进行截断</p>
 <h3 id="横线">横线</h3>
 <hr>
 <p>***、—、___可以显示横线效果</p>
@@ -370,15 +374,17 @@
 </ol>
 <h3 id="复选框列表">复选框列表</h3>
 <h4 id="语法-v5">语法</h4>
-<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="bullet">- </span>[x] 需求分析</span><br><span class="line"><span class="bullet">- </span>[x] 系统设计</span><br><span class="line"><span class="bullet">- </span>[x] 详细设计</span><br><span class="line"><span class="bullet">- </span>[ ] 编码</span><br><span class="line"><span class="bullet">- </span>[ ] 测试</span><br><span class="line"><span class="bullet">- </span>[ ] 交付</span><br></pre></td></tr></table></figure>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line"><span class="bullet">- </span>[x] 需求分析</span><br><span class="line"><span class="bullet">- </span>[x] 系统设计</span><br><span class="line"><span class="bullet">- </span>[x] 详细设计</span><br><span class="line"><span class="bullet">- </span>[ ] 编码</span><br><span class="line"><span class="bullet">- </span>[ ] 测试</span><br><span class="line"><span class="bullet">- </span>[ ] 交付</span><br><span class="line"><span class="bullet">- </span>[x] 这是选中的状态</span><br><span class="line"><span class="bullet">- </span>[ ] 这是未选中状态，注意中间空格不能丢</span><br></pre></td></tr></table></figure>
 <h4 id="效果-v5">效果</h4>
 <ul>
-<li>[x] 需求分析</li>
-<li>[x] 系统设计</li>
-<li>[x] 详细设计</li>
-<li>[ ] 编码</li>
-<li>[ ] 测试</li>
-<li>[ ] 交付</li>
+<li><input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0">需求分析</label></li>
+<li><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">系统设计</label></li>
+<li><input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2">详细设计</label></li>
+<li><input type="checkbox" id="checkbox3"><label for="checkbox3">编码</label></li>
+<li><input type="checkbox" id="checkbox4"><label for="checkbox4">测试</label></li>
+<li><input type="checkbox" id="checkbox5"><label for="checkbox5">交付</label></li>
+<li><input type="checkbox" id="checkbox6" checked="true"><label for="checkbox6">这是选中的状态</label></li>
+<li><input type="checkbox" id="checkbox7"><label for="checkbox7">这是未选中状态，注意中间空格不能丢</label></li>
 </ul>
 <p>您可以使用这个功能来标注某个项目各项任务的完成情况。</p>
 <blockquote>
@@ -540,6 +546,13 @@ GFM中可以显示的展示diff效果。使用绿色表示新增，红色表示�
 另外还有有 <code>!</code>和<code>#</code>的语法。</p>
 <h4 id="效果-v8">效果</h4>
 <figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="addition">+ 人闲桂花落，</span></span><br><span class="line"><span class="deletion">- 夜静春山空。</span></span><br><span class="line"><span class="addition">! 月出惊山鸟，</span></span><br><span class="line"># 时鸣春涧中。</span><br></pre></td></tr></table></figure>
+<h3 id="添加的功能">添加的功能</h3>
+<h4 id="折叠演示：">折叠演示：</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;% fold 点击显/隐内容 %&#125;</span><br><span class="line">something you want to fold, include code block.</span><br><span class="line">&#123;% endfold %&#125;</span><br></pre></td></tr></table></figure>
+<div><div class="fold_hider"><div class="close hider_title">点击显/隐内容</div></div><div class="fold">
+<p>something you want to fold, include code block.</p>
+
+</div></div>
 <hr>
 ]]></content>
       <categories>
@@ -704,20 +717,14 @@ GFM中可以显示的展示diff效果。使用绿色表示新增，红色表示�
   <entry>
     <title>Hello World</title>
     <url>/2010/04/01/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start">Quick Start</h2>
-<h3 id="Create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">请输入密码，按[Enter]键确定</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="556e8856277139df16859ab0a9831397e5bc36a9598adc4872ee9b608a2cba30">b51521c9612b81743f51bb69e95a7423a4deb3d912f3e4193f1cda77304cf47198a81c6aad8cdf5b83deeeb08315da4070d02bbedb40e4a9cbc77b7bee7720f7e738a49639a47ed5b355bbc3fc7a9506bf0cbac092b4fb27616ab639fee08fbbbd1dae7cd3e77eea9b11ce4b04ba65067432771ec8f958929750886d1c60dab31aa78cf6e6a1cacd03794bf44f460f7288c80be226a77f894eaf0adf7151b1befcc77d47b7bd181a15da17abfe055bba7d4516a1249d5cc5c52cbd3598f3d718794fcaea712fcf57a79b61147194ac1b9d3f964cb61f39d1d4c89ddca145a291a2cd591f8c7a06a9d1d343476f4681d1766eca0456acb346c421c42cbf6c9502f3cf301606ceea342ed61c4371201f480fe59abdcda944567c9fe1ed1efed4f0f3e57bb17c5783b42738c63597c517dd0ef5f83d7a174145d6960b7693ce80f0878b4735080594b1f5387a3967af79eaee29de25a0230d692636eb8dccd04f7271ae7b3af074c058b72e9c526d176a6060e8a4a1b5e2c9e163d0d31d025ae1bb26b74cf5fdbeebdc23fb37383b603b5df0311f0f56c25a27d5b0bd348dae538c31d78fc9cb39aa302033ad693a92e613c73d54e459e8b5e8d8d680e8e1236fbd1025883c0c990f9173525bcdc10c3c7b5759b30a3a9c3419e48fb98c1b0f49d822ad7c83b8ba1d8d419a1d410747f729c52a02d9ad2ec8394423c7fc1020418a8d0b959e4d8bc9321d354ebfe0db41f198a209ccd2312c8428e19d25fdb247a4b2bee4ef8b12bdf6ccb9c268433f82e014c9e7781656df86a2d5dd946e514ffffc3735ae8778b193c66c7f24d41dfecd69a11d44827f3626908c16038d7a93ed428d4d78cc953e70094550c49b2d3806f887ea0c156e6387e23d6dd221e2bcdf4190c40b82c24d8cf452ad8a02d7bcfe4e6c0222a6b20ff0254a9b5841f9dc9989b4d3ec50b866e9d658578c59f87416ab35435cac93227a31e788cacea5d0f582d83c950e14babec15da05491107ecbab69b0dfbc5a1f62f7de3d59e0bd7dc8b84f53317111434122dad685b52458321db601c785c5fe9f34ff7643b1f3595ca04888c9476fcd0a7f4ec1bd3bb5ddf69a78d48aaac2583968ec5d08b787bf89f88eb7e82e41512abd150ec348fb3394c0eeb5e4ae043d7e0226bda18127defe2c7ceae9ebb33b92308e1d6a6fa9ebe00608d4b22528e492d1717675d5f0ebf62c01348137ae06511b875b4e139d15c1edbc82f1e098cad5f7bf085e9f930ef401cd4d62ab1fed75433dfad5d3c3ea94fb5f8cde68ea084031540834b95eaa0b75ccb7a4876804941939dbae9cc94f7c81e258502ba7a69214878242cdce100643cdd2406e632ddae6cfc25f1e7513eaa97437146e6090b98d45745b82a21aa9998975555885c7fc10b90094ec8b499a794e5251440e3e2711cb2513d81fa8d3c9eb154e0f84aa18a2720f7f47931512a1f8e8b0823c9cc2e020e67ff24606fcf06f0645ef45313a487b6e5bf3a384043bdc066312807ed1e504139bc09c189a42058eff602f41403e41f9e6eabe56e3b2773c0c61dab0a4579cfdbfa97daf802805092fe2bb4825ff2392b04e534d6c0278f57f9265c17737ce1628e58d1d611f3ff4e1b7f3af6506ccddd8494890467d80266956218efeb6d9a088416b70bcdaff2a8b77fb59ec59c35dfb4b3c2b23d1f8bb9a9c327737aebc38f48d9236d3d894d2b5d0c9008a82e841a313e3e9486324ee77768a929743dd23535da49aa6316dcc7d3ca43645cae709abfab1923f8557db9f95063af630badf1f298c01cdeb7cc69b9741c740590a81fecca5ed6557b0606825ff8ee761d5538e31b8fc9e1152267d38ca8f8b0637ceb805cd3eab6d7b04bd96a3b968d68386f2ced9592fcd13d023105ae19ea41c2b5a4471a7164d2941b9f53dd60aec21437bccffc03e59c1cca0954973b2efbfffa168a8c52681b53f8e86f5f22cd85aa46c3cd2cec8567cde347945c9a05618ee18e87ba649f4b871aa84232da9575b2d6f7da20e21ffdefdf61a05fee743cae49bc237efe95debf05ac3b3d91ec1876def662848f0c4712989fd43383d2c7891023d6a17f9070c678d87f2527d5690d0834b527737c01615fc1e562ba0ec575704ef499c9e0bf8ed505f31854a43d4f5739fdea26add8691af0d8e33e7fbf3969ffe5eabe64e9111753f1cf87d8970dd9ef495e844568843372fcf71230ffd6a444adc44212a30583ea0ea8c763c9d9e438dfcb064967d2eff65330e9ddd0fcb740551d48e7fb82d9f4f8b02b3980751af2553660b7e175ec1b614ce4c50f8ab7bc01aec9925b83b1d79de2eb831098e01aa77a06bd823c677ef24079c7dc14c4a5a1831fd42408af8461aa720404873d730c9297ef8119bb3a1922279d8ee38c82a5f985398247fccc29c7052fff07c3963ea5a86ea6d3002ccb825286cf390d6302943720e7ff690f1d48d71be9fce9f4e75341c0303690cf951e3ee819aa03fa250318aa2e88ceaa5bff4047e2e473a855c7b3d0b6789fb44f9f3c3088ed47546bd4bb8cb8cfcf77d24c662137b757591493ad40236b08ffc96b09bba6d6d21e1f3e23198a1b08da4cff1a6a43643cae86a361dfc0e74f9463622d022b0fb58b31cfe444d88d3e6577887ced207871eaabcce6deec01f62c06be8600b004f53316d9d67c790943444c3ca6c339cf50d41ff90eba88b626ff0c53b4f817ccebe59e86a1c8704a58d055fe2fa85a30833ccbd6ff38826892a9fa90acec1bf203e8cc54b4fa451fbd817330725d92b6d255a902811c2bdecdd31f98af20c1606fe967665d99eee2624b875aa466ce539efc6bdd694fc44e90ca57c2c8027c9f99e4bd80d8f7fdef2b9cb898e324b8f160f39f8c43630fa651adfb77d5443e09d1b52f7852b</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
   </entry>
 </search>

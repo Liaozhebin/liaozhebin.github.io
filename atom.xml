@@ -89,9 +89,9 @@
       <category term="democate" scheme="http://yoursite.com/categories/cate/democate/"/>
     
     
-      <category term="Hello" scheme="http://yoursite.com/tags/Hello/"/>
-    
       <category term="Demo" scheme="http://yoursite.com/tags/Demo/"/>
+    
+      <category term="Hello" scheme="http://yoursite.com/tags/Hello/"/>
     
   </entry>
   
@@ -104,7 +104,7 @@
     
     <summary type="html">
     
-      有东西被加密了，请输入密码查看
+      🔐咦，这儿有东西被加密了，需要输入密码才能查看~
     
     </summary>
     

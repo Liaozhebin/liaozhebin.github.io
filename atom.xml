@@ -46,13 +46,12 @@
     <link href="http://yoursite.com/2020/03/03/Github-Flavored-Markdown-Demo/"/>
     <id>http://yoursite.com/2020/03/03/Github-Flavored-Markdown-Demo/</id>
     <published>2020-03-03T08:35:23.000Z</published>
-    <updated>2020-03-06T14:04:48.781Z</updated>
+    <updated>2020-03-10T12:42:06.788Z</updated>
     
     <summary type="html">
     
-      &lt;h1&gt;README&lt;/h1&gt;
-&lt;p&gt;该文件用来测试和展示书写README的各种markdown语法。GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之为&lt;code&gt;GitHub Flavored Markdown&lt;/code&gt;。简称&lt;code&gt;GFM&lt;/code&gt;，GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。&lt;/p&gt;
-&lt;hr&gt;
+      &lt;p&gt;&lt;strong&gt;README&lt;/strong&gt;&lt;br&gt;
+该文件用来测试和展示书写编写博客时需要用到的各种markdown语法。GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之为&lt;code&gt;GitHub Flavored Markdown&lt;/code&gt;。简称&lt;code&gt;GFM&lt;/code&gt;，GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。&lt;/p&gt;
     
     </summary>
     
@@ -89,9 +88,9 @@
       <category term="democate" scheme="http://yoursite.com/categories/cate/democate/"/>
     
     
-      <category term="Demo" scheme="http://yoursite.com/tags/Demo/"/>
-    
       <category term="Hello" scheme="http://yoursite.com/tags/Hello/"/>
+    
+      <category term="Demo" scheme="http://yoursite.com/tags/Demo/"/>
     
   </entry>
   

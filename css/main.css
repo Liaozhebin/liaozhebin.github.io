@@ -1378,7 +1378,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #0b580f;
+  background: #3bec86;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2582,11 +2582,11 @@ ul.breadcrumb li + li:last-child {
   padding: 0;
   position: absolute;
   top: 0;
-  width: 300px;
+  width: 280px;
 }
 @media (min-width: 1200px) {
   .header-inner {
-    width: 300px;
+    width: 280px;
   }
 }
 @media (max-width: 991px) {
@@ -2613,7 +2613,7 @@ ul.breadcrumb li + li:last-child {
   box-shadow: initial;
   box-sizing: border-box;
   padding: 40px;
-  width: calc(100% - 312px);
+  width: calc(100% - 292px);
 }
 @media (max-width: 991px) {
   .content-wrap {
@@ -2744,7 +2744,7 @@ ul.breadcrumb li + li:last-child {
   box-shadow: none;
   margin-top: 100%;
   position: static;
-  width: 300px;
+  width: 280px;
 }
 @media (max-width: 991px) {
   .sidebar {
@@ -2760,7 +2760,7 @@ ul.breadcrumb li + li:last-child {
   box-shadow: initial;
   box-sizing: border-box;
   color: var(--text-color);
-  width: 300px;
+  width: 280px;
   opacity: 0;
 }
 .sidebar-inner.affix {
@@ -2800,7 +2800,6 @@ ul.breadcrumb li + li:last-child {
 }
 .links-of-author-item {
   margin: 5px 0 0;
-  width: 50%;
 }
 .links-of-author-item a,
 .links-of-author-item span.exturl {
@@ -2834,6 +2833,20 @@ ul.breadcrumb li + li:last-child {
 }
 .links-of-blogroll-item {
   padding: 0;
+  display: inline-block;
+  margin: 5px 0 0;
+}
+.links-of-blogroll-item a,
+.links-of-blogroll-item span.exturl {
+  box-sizing: border-box;
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 0;
+  max-width: 216px;
+  overflow: hidden;
+  padding: 0 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .back-to-top {
   background: var(--body-bg-color);

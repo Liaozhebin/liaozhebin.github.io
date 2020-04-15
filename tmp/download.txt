@@ -1,4 +1,4 @@
 https://storage.googleapis.com/media.webmproject.org/devsite/vp9/output/vod/tos-1920x1080-24-30fps.webm
-https://github.com/Liaozhebin/liaozhebin.github.io/raw/master/tmp/h5ai_made.zip
-https://github.com/Liaozhebin/liaozhebin.github.io/raw/master/tmp/beautiful%20in%20white.mp3
+https://github.com/Liaozhebin/liaozhebin.github.io/raw/master/Jekyll/h5ai_made.zip
+https://github.com/Liaozhebin/liaozhebin.github.io/raw/master/Jekyll/beautiful%20in%20white.mp3
 https://storage.googleapis.com/media.webmproject.org/devsite/vp9/output/hdr/2pass_HDR_strobe_scientist_6Mbps-static.webm

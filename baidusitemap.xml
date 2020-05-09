@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/2020/03/03/</loc>
-    <lastmod>2020-03-10</lastmod>
+    <loc>https://592592.xyz/2010/Hello_World/</loc>
+    <lastmod>2020-05-08</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2020/03/01/</loc>
-    <lastmod>2020-03-03</lastmod>
+    <loc>https://592592.xyz/2020/RDPWrap_fix/</loc>
+    <lastmod>2020-05-08</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2010/04/01/</loc>
-    <lastmod>2018-04-30</lastmod>
+    <loc>https://592592.xyz/2020/Handwriting/</loc>
+    <lastmod>2020-05-06</lastmod>
+  </url>  <url>
+    <loc>https://592592.xyz/2020/Ranger/</loc>
+    <lastmod>2020-05-05</lastmod>
+  </url>  <url>
+    <loc>https://592592.xyz/2020/Scoop/</loc>
+    <lastmod>2020-05-03</lastmod>
+  </url>  <url>
+    <loc>https://592592.xyz/2020/Github_Flavored_Markdown/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>  <url>
+    <loc>https://592592.xyz/2020/Ranger/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>  <url>
+    <loc>https://592592.xyz/2020/Zsh_and_oh-my-zsh/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>  <url>
+    <loc>https://592592.xyz/2020/BreakWall_V2Ray_User_Guide/</loc>
+    <lastmod>2020-05-02</lastmod>
+  </url>  <url>
+    <loc>https://592592.xyz/2020/fish/</loc>
+    <lastmod>2020-04-29</lastmod>
+  </url>  <url>
+    <loc>https://592592.xyz/2020/Cmder/</loc>
+    <lastmod>2020-04-22</lastmod>
   </url>
 </urlset>

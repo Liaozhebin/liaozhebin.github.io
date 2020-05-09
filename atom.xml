@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Bingo | zhrbin</title>
-  <icon>http://yoursite.com/icon.png</icon>
+  <icon>https://592592.xyz/icon.png</icon>
   <subtitle>随笔行舟,记录分享</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2020-03-10T12:42:06.788Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="https://592592.xyz/"/>
+  <updated>2020-05-08T16:00:00.000Z</updated>
+  <id>https://592592.xyz/</id>
   
   <author>
     <name>Liaozhebin</name>
@@ -17,11 +17,279 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Github Flavored Markdown Demo</title>
-    <link href="http://yoursite.com/2020/03/03/"/>
-    <id>http://yoursite.com/2020/03/03/</id>
-    <published>2020-03-03T08:35:23.000Z</published>
-    <updated>2020-03-10T12:42:06.788Z</updated>
+    <title>RDPWrap，Windows 多用户远程连接补丁</title>
+    <link href="https://592592.xyz/2020/RDPWrap_fix/"/>
+    <id>https://592592.xyz/2020/RDPWrap_fix/</id>
+    <published>2020-05-07T16:00:00.000Z</published>
+    <updated>2020-05-08T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;补丁作用：&quot;&gt;补丁作用：&lt;/h2&gt;
+&lt;p&gt;正常情况下 &lt;strong&gt;家庭版 Windows&lt;/strong&gt; 是没有远程连接的功能的，而比家庭版更高级的 &lt;strong&gt;专业版/企业版&lt;/strong&gt; 虽然有远程连接支持，但是相比于 &lt;strong&gt;Server 服务器版&lt;/strong&gt; ，还是限制了只允许一个用户登录使用电脑,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;比如：名称 &lt;code&gt;B&lt;/code&gt; 的用户远程连接进来你的电脑，本地使用着电脑的（你）&lt;code&gt;A&lt;/code&gt; 用户必须退出登录，&lt;code&gt;B&lt;/code&gt; 才可连接上。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;而这个补丁的作用就是让 &lt;strong&gt;非 Server 服务器版 Windows&lt;/strong&gt;  能够拥有一个完整版的远程功能（支持多用户远程 &lt;strong&gt;同时&lt;/strong&gt; 连接）&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Windows" scheme="https://592592.xyz/categories/Windows/"/>
+    
+      <category term="教程/Tutorial" scheme="https://592592.xyz/categories/Windows/%E6%95%99%E7%A8%8B-Tutorial/"/>
+    
+      <category term="笔记/Notes" scheme="https://592592.xyz/categories/Windows/%E6%95%99%E7%A8%8B-Tutorial/%E7%AC%94%E8%AE%B0-Notes/"/>
+    
+    
+      <category term="Windows" scheme="https://592592.xyz/tags/Windows/"/>
+    
+      <category term="远程连接" scheme="https://592592.xyz/tags/%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>造假记：手写字迹仿真</title>
+    <link href="https://592592.xyz/2020/Handwriting/"/>
+    <id>https://592592.xyz/2020/Handwriting/</id>
+    <published>2020-05-04T16:00:00.000Z</published>
+    <updated>2020-05-06T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;引&quot;&gt;引&lt;/h2&gt;
+&lt;p&gt;奈何 &lt;strong&gt;2020&lt;/strong&gt; 年了，全中国都脱贫了，我竟然还在大学本科遇到了以 &lt;strong&gt;抄写&lt;/strong&gt; 课文为教学方针语言老师。&lt;/p&gt;
+&lt;p&gt;以 &lt;strong&gt;自愿&lt;/strong&gt; 为前提的抄写对学习的帮助个人是认同的，也曾从中受益过。&lt;/p&gt;
+&lt;p&gt;而全盘一致的任务性抄写我是反感的，不吃这一套的我，寻思着这教学方针对我没用啊，甚至于 &lt;code&gt;抄写=浪费时间&lt;/code&gt; 。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;换在之前的学校我很有可能就不理会（不交了），可这里是本科，能拿的绩点还是得尽量拿一下呀。要是不交的话这种老师势必记仇最后影响到绩点。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;没办法，于是奔着抄写不如学习新技能的心态，开始在网上寻找 &lt;code&gt;字迹仿真&lt;/code&gt; 解决方案。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="生活记录" scheme="https://592592.xyz/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+    
+      <category term="Windows" scheme="https://592592.xyz/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/Windows/"/>
+    
+      <category term="教程/Tutorial" scheme="https://592592.xyz/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/Windows/%E6%95%99%E7%A8%8B-Tutorial/"/>
+    
+      <category term="新技能" scheme="https://592592.xyz/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/Windows/%E6%95%99%E7%A8%8B-Tutorial/%E6%96%B0%E6%8A%80%E8%83%BD/"/>
+    
+    
+      <category term="字迹仿真" scheme="https://592592.xyz/tags/%E5%AD%97%E8%BF%B9%E4%BB%BF%E7%9C%9F/"/>
+    
+      <category term="新技能" scheme="https://592592.xyz/tags/%E6%96%B0%E6%8A%80%E8%83%BD/"/>
+    
+      <category term="生活记录" scheme="https://592592.xyz/tags/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ranger，命令行 UI 化的文件管理器</title>
+    <link href="https://592592.xyz/2020/Ranger/"/>
+    <id>https://592592.xyz/2020/Ranger/</id>
+    <published>2020-05-02T16:00:00.000Z</published>
+    <updated>2020-05-05T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;README&lt;/strong&gt;&lt;br&gt;
+本文介绍 &lt;code&gt;Ranger&lt;/code&gt; ，它是一个非常实用且具有 &lt;code&gt;VI/VIM快捷键&lt;/code&gt; 风格的控制台文件管理器，让熟悉 &lt;code&gt;vim&lt;/code&gt; 的你可以快速上手。它提供了一个简约而美观的界面，并具有目录层次结构的视图&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Shell" scheme="https://592592.xyz/categories/Shell/"/>
+    
+      <category term="教程/Tutorial" scheme="https://592592.xyz/categories/Shell/%E6%95%99%E7%A8%8B-Tutorial/"/>
+    
+      <category term="Linux" scheme="https://592592.xyz/categories/Shell/%E6%95%99%E7%A8%8B-Tutorial/Linux/"/>
+    
+    
+      <category term="Shell" scheme="https://592592.xyz/tags/Shell/"/>
+    
+      <category term="Windows" scheme="https://592592.xyz/tags/Windows/"/>
+    
+      <category term="Ranger" scheme="https://592592.xyz/tags/Ranger/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Scoop，一款Windows的包管理器</title>
+    <link href="https://592592.xyz/2020/Scoop/"/>
+    <id>https://592592.xyz/2020/Scoop/</id>
+    <published>2020-05-01T16:00:00.000Z</published>
+    <updated>2020-05-03T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;README&lt;/strong&gt;&lt;br&gt;
+本文介绍 &lt;code&gt;Scoop&lt;/code&gt; 的安装与使用，Scoop 是一款 Windows 下的软件包管理器，类似于Linux下的&lt;code&gt;apt / yum / dnf&lt;/code&gt;，通过命令可以很方便的安装你想到的软件到指定路径。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Shell" scheme="https://592592.xyz/categories/Shell/"/>
+    
+      <category term="Windows" scheme="https://592592.xyz/categories/Shell/Windows/"/>
+    
+      <category term="教程/Tutorial" scheme="https://592592.xyz/categories/Shell/Windows/%E6%95%99%E7%A8%8B-Tutorial/"/>
+    
+      <category term="包管理器" scheme="https://592592.xyz/categories/Shell/Windows/%E6%95%99%E7%A8%8B-Tutorial/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/"/>
+    
+    
+      <category term="Shell" scheme="https://592592.xyz/tags/Shell/"/>
+    
+      <category term="Windows" scheme="https://592592.xyz/tags/Windows/"/>
+    
+      <category term="Scoop" scheme="https://592592.xyz/tags/Scoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>antigen，Zsh 的包管理器</title>
+    <link href="https://592592.xyz/2020/Ranger/"/>
+    <id>https://592592.xyz/2020/Ranger/</id>
+    <published>2020-04-30T16:00:00.000Z</published>
+    <updated>2020-05-02T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Readme&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;觉得前面的 &lt;code&gt;zsh&lt;/code&gt; 安装太复杂？ 试试它的包管理器 &lt;code&gt;antigen&lt;/code&gt; 吧，一个能够让你 &lt;strong&gt;更快更轻松&lt;/strong&gt; 部署好用 &lt;code&gt;Shell&lt;/code&gt; 环境的工具。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/zsh-users/antigen&quot; target=&quot;_blank&quot; rel=&quot;noopener external nofollow noreferrer&quot;&gt;Github 项目主页&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Shell" scheme="https://592592.xyz/categories/Shell/"/>
+    
+      <category term="Linux" scheme="https://592592.xyz/categories/Shell/Linux/"/>
+    
+      <category term="教程/Tutorial" scheme="https://592592.xyz/categories/Shell/Linux/%E6%95%99%E7%A8%8B-Tutorial/"/>
+    
+      <category term="包管理器" scheme="https://592592.xyz/categories/Shell/Linux/%E6%95%99%E7%A8%8B-Tutorial/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/"/>
+    
+    
+      <category term="Shell" scheme="https://592592.xyz/tags/Shell/"/>
+    
+      <category term="Linux" scheme="https://592592.xyz/tags/Linux/"/>
+    
+      <category term="Zsh" scheme="https://592592.xyz/tags/Zsh/"/>
+    
+      <category term="oh-my-zsh" scheme="https://592592.xyz/tags/oh-my-zsh/"/>
+    
+      <category term="antigen" scheme="https://592592.xyz/tags/antigen/"/>
+    
+      <category term="包管理器" scheme="https://592592.xyz/tags/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Fish，真正开箱即用的 Linux Shell 终端</title>
+    <link href="https://592592.xyz/2020/fish/"/>
+    <id>https://592592.xyz/2020/fish/</id>
+    <published>2020-04-27T16:00:00.000Z</published>
+    <updated>2020-04-29T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Readme&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;看了之前 &lt;code&gt;zsh&lt;/code&gt; 的配置教程有些萌萌新可能会觉得有点复杂而头大，简单学习完 zsh 之后发现一款真正 &lt;strong&gt;开箱即用&lt;/strong&gt; 的终端 &lt;strong&gt;&lt;code&gt;Fish&lt;/code&gt;&lt;/strong&gt; ，它可以通过包管理器 &lt;code&gt;apt / yum / dnf&lt;/code&gt; 一键安装，并在不需要任何配置的情况下，达到比传统的 &lt;code&gt;Bash&lt;/code&gt; 更好用的状态&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Shell" scheme="https://592592.xyz/categories/Shell/"/>
+    
+      <category term="Linux" scheme="https://592592.xyz/categories/Shell/Linux/"/>
+    
+      <category term="教程/Tutorial" scheme="https://592592.xyz/categories/Shell/Linux/%E6%95%99%E7%A8%8B-Tutorial/"/>
+    
+    
+      <category term="Shell" scheme="https://592592.xyz/tags/Shell/"/>
+    
+      <category term="Linux" scheme="https://592592.xyz/tags/Linux/"/>
+    
+      <category term="fish" scheme="https://592592.xyz/tags/fish/"/>
+    
+      <category term="oh-my-fish" scheme="https://592592.xyz/tags/oh-my-fish/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Zsh，一款现代化的 Linux Shell 终端</title>
+    <link href="https://592592.xyz/2020/Zsh_and_oh-my-zsh/"/>
+    <id>https://592592.xyz/2020/Zsh_and_oh-my-zsh/</id>
+    <published>2020-04-25T16:00:00.000Z</published>
+    <updated>2020-05-02T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;README&lt;/strong&gt;&lt;br&gt;
+本文介绍了 &lt;code&gt;Zsh&lt;/code&gt;是什么，与传统的bash有什么不同，如何安装并使用，&lt;code&gt;Shell&lt;/code&gt;的概念，以及zsh的配置集&lt;code&gt;oh-my-zsh&lt;/code&gt;的主题与插件的使用。&lt;br&gt;
+&lt;code&gt;zsh&lt;/code&gt; 是一款 &lt;strong&gt;成熟稳定，现代化&lt;/strong&gt;的 shell，兼容于传统的 bash  sh 的同时，比它们拥有更强大的功能。以至于苹果系统已将 zsh 取代 bash 作为系统默认的 &lt;code&gt;shell&lt;/code&gt; 了&lt;sup class=&quot;footnote-ref&quot;&gt;&lt;a href=&quot;#fn1&quot; id=&quot;fnref1&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;.&lt;br&gt;
+&lt;code&gt;oh-my-zsh&lt;/code&gt;集成了 zsh 的 配置文件、主题 Themes、插件 Options，使任何人可以轻松的配置出一个 &lt;strong&gt;beautiful &amp;amp; friendly&lt;/strong&gt; 的 zsh，来提高生产效率。包括更智能的色彩高亮，历史目录快速跳转，kill 进程名按 tab 键 自动转 PID 等自动补齐功能。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Shell" scheme="https://592592.xyz/categories/Shell/"/>
+    
+      <category term="Linux" scheme="https://592592.xyz/categories/Shell/Linux/"/>
+    
+      <category term="教程/Tutorial" scheme="https://592592.xyz/categories/Shell/Linux/%E6%95%99%E7%A8%8B-Tutorial/"/>
+    
+    
+      <category term="Shell" scheme="https://592592.xyz/tags/Shell/"/>
+    
+      <category term="Linux" scheme="https://592592.xyz/tags/Linux/"/>
+    
+      <category term="Zsh" scheme="https://592592.xyz/tags/Zsh/"/>
+    
+      <category term="oh-my-zsh" scheme="https://592592.xyz/tags/oh-my-zsh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cmder，一款增强版的 Windows 命令行</title>
+    <link href="https://592592.xyz/2020/Cmder/"/>
+    <id>https://592592.xyz/2020/Cmder/</id>
+    <published>2020-04-19T16:00:00.000Z</published>
+    <updated>2020-04-22T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;README&lt;/strong&gt;&lt;br&gt;
+本文介绍 &lt;code&gt;Cmder&lt;/code&gt; 的安装与使用。&lt;br&gt;
+&lt;code&gt;cmder&lt;/code&gt; 是一个增强型命令行工具，不仅可以使用 &lt;code&gt;windows&lt;/code&gt; 下的所有命令，更爽的是可以使用 &lt;code&gt;linux&lt;/code&gt; 的shell命令。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Shell" scheme="https://592592.xyz/categories/Shell/"/>
+    
+      <category term="Windows" scheme="https://592592.xyz/categories/Shell/Windows/"/>
+    
+      <category term="教程/Tutorial" scheme="https://592592.xyz/categories/Shell/Windows/%E6%95%99%E7%A8%8B-Tutorial/"/>
+    
+    
+      <category term="Shell" scheme="https://592592.xyz/tags/Shell/"/>
+    
+      <category term="Windows" scheme="https://592592.xyz/tags/Windows/"/>
+    
+      <category term="Cmder" scheme="https://592592.xyz/tags/Cmder/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github Flavored Markdown</title>
+    <link href="https://592592.xyz/2020/Github_Flavored_Markdown/"/>
+    <id>https://592592.xyz/2020/Github_Flavored_Markdown/</id>
+    <published>2020-04-07T16:00:00.000Z</published>
+    <updated>2020-05-02T16:00:00.000Z</updated>
     
     <summary type="html">
     
@@ -31,58 +299,65 @@
     </summary>
     
     
-      <category term="cate" scheme="http://yoursite.com/categories/cate/"/>
-    
-      <category term="cate2" scheme="http://yoursite.com/categories/cate/cate2/"/>
+      <category term="Demo 演示" scheme="https://592592.xyz/categories/Demo-%E6%BC%94%E7%A4%BA/"/>
     
     
-      <category term="Demo" scheme="http://yoursite.com/tags/Demo/"/>
+      <category term="Markdown" scheme="https://592592.xyz/tags/Markdown/"/>
     
-      <category term="Github" scheme="http://yoursite.com/tags/Github/"/>
+      <category term="Demo 演示" scheme="https://592592.xyz/tags/Demo-%E6%BC%94%E7%A4%BA/"/>
     
   </entry>
   
   <entry>
-    <title>hello hexo</title>
-    <link href="http://yoursite.com/2020/03/01/"/>
-    <id>http://yoursite.com/2020/03/01/</id>
-    <published>2020-03-01T10:04:46.000Z</published>
-    <updated>2020-03-03T13:50:23.377Z</updated>
+    <title>墙爆指南，V2Ray 客户端使用说明</title>
+    <link href="https://592592.xyz/2020/BreakWall_V2Ray_User_Guide/"/>
+    <id>https://592592.xyz/2020/BreakWall_V2Ray_User_Guide/</id>
+    <published>2020-02-01T16:00:00.000Z</published>
+    <updated>2020-05-02T16:00:00.000Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;==这里是目录，可以快速跳转==&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;!-- toc --&gt;
+      &lt;p&gt;&lt;strong&gt;README&lt;/strong&gt;&lt;br&gt;
+本文介绍如何在 Android、IOS、PC 客户端中使用 &lt;strong&gt;V2Ray&lt;/strong&gt; ,包含： 如何使用&lt;code&gt;Vmess&lt;/code&gt;链接导入节点，如何完成基础设置并开始使用。&lt;/p&gt;
     
     </summary>
     
     
-      <category term="cate" scheme="http://yoursite.com/categories/cate/"/>
+      <category term="科学上网" scheme="https://592592.xyz/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
     
-      <category term="democate" scheme="http://yoursite.com/categories/cate/democate/"/>
+      <category term="V2Ray" scheme="https://592592.xyz/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/V2Ray/"/>
+    
+      <category term="教程/Tutorial" scheme="https://592592.xyz/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/V2Ray/%E6%95%99%E7%A8%8B-Tutorial/"/>
     
     
-      <category term="Demo" scheme="http://yoursite.com/tags/Demo/"/>
+      <category term="科学上网" scheme="https://592592.xyz/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
     
-      <category term="Hello" scheme="http://yoursite.com/tags/Hello/"/>
+      <category term="BreakWall" scheme="https://592592.xyz/tags/BreakWall/"/>
+    
+      <category term="V2Ray" scheme="https://592592.xyz/tags/V2Ray/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2010/04/01/"/>
-    <id>http://yoursite.com/2010/04/01/</id>
-    <published>2010-03-31T16:00:00.000Z</published>
-    <updated>2018-04-30T16:00:00.000Z</updated>
+    <link href="https://592592.xyz/2010/Hello_World/"/>
+    <id>https://592592.xyz/2010/Hello_World/</id>
+    <published>2009-12-31T16:00:00.000Z</published>
+    <updated>2020-05-08T16:00:00.000Z</updated>
     
     <summary type="html">
     
-      🔐咦，这儿有东西被加密了，需要输入密码才能查看~
+      🔐咦，这儿有东西被加密了，需要输入密码 592592 才能查看~
     
     </summary>
     
     
+      <category term="Demo 演示" scheme="https://592592.xyz/categories/Demo-%E6%BC%94%E7%A4%BA/"/>
+    
+    
+      <category term="Demo 演示" scheme="https://592592.xyz/tags/Demo-%E6%BC%94%E7%A4%BA/"/>
+    
+      <category term="Hello World" scheme="https://592592.xyz/tags/Hello-World/"/>
     
   </entry>
   

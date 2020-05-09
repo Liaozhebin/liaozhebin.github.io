@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Amita:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"592592.xyz","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Readme 看了之前 zsh 的配置教程有些萌萌新可能会觉得有点复杂而头大，简单学习完 zsh 之后发现一款真正 开箱即用 的终端 Fish ，它可以通过包管理器 apt &#x2F; yum &#x2F; dnf 一键安装，并在不需要任何配置的情况下，达到比传统的 Bash 更好用的状态">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fish，真正开箱即用的 Linux Shell 终端">
+<meta property="og:url" content="https://592592.xyz/2020/fish/index.html">
+<meta property="og:site_name" content="Bingo | zhrbin">
+<meta property="og:description" content="Readme 看了之前 zsh 的配置教程有些萌萌新可能会觉得有点复杂而头大，简单学习完 zsh 之后发现一款真正 开箱即用 的终端 Fish ，它可以通过包管理器 apt &#x2F; yum &#x2F; dnf 一键安装，并在不需要任何配置的情况下，达到比传统的 Bash 更好用的状态">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-04-29T16:00:00.000Z">
+<meta property="article:author" content="Liaozhebin">
+<meta property="article:tag" content="Shell">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="fish">
+<meta property="article:tag" content="oh-my-fish">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://592592.xyz/2020/fish/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Fish，真正开箱即用的 Linux Shell 终端 | Bingo | zhrbin</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165928363-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-165928363-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9fb65a5a4370ac833060e18a9f952275";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Bingo | zhrbin" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bingo | zhrbin</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">随笔行舟,记录分享</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页 | Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于 | About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签 | Tags<span class="badge">22</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类 | Categories<span class="badge">20</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档 | Archives<span class="badge">11</span></a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/links" rel="section"><i class="link fa-fw"></i>友情链接 | links</a>
+
+  </li>
+        <li class="menu-item menu-item-movies">
+
+    <a href="/movies/" rel="section"><i class="film fa-fw"></i>观影 | Movies</a>
+
+  </li>
+        <li class="menu-item menu-item-books">
+
+    <a href="/books/" rel="section"><i class="book fa-fw"></i>阅读 | books</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索 | Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/liaozhebin" class="github-corner" title="Follow me on GitHub | Github 大法好" aria-label="Follow me on GitHub | Github 大法好" rel="noopener external nofollow noreferrer" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://592592.xyz/2020/fish/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
+      <meta itemprop="name" content="Liaozhebin">
+      <meta itemprop="description" content="记录生活&分享知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bingo | zhrbin">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Fish，真正开箱即用的 Linux Shell 终端<a href="https://github.com/liaozhebin/repo-name/tree/branch-name/subdirectory-name_posts/fish.md" class="post-edit-link" title="编辑" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-pencil-alt"></i></a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-28 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-28T00:00:00+08:00">2020-04-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-30 00:00:00" itemprop="dateModified" datetime="2020-04-30T00:00:00+08:00">2020-04-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/" itemprop="url" rel="index"><span itemprop="name">Shell</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Linux/%E6%95%99%E7%A8%8B-Tutorial/" itemprop="url" rel="index"><span itemprop="name">教程/Tutorial</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/fish/" class="post-meta-item leancloud_visitors" data-flag-title="Fish，真正开箱即用的 Linux Shell 终端" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/fish/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/fish/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+         <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>Readme</strong></p>
+<p>看了之前 <code>zsh</code> 的配置教程有些萌萌新可能会觉得有点复杂而头大，简单学习完 zsh 之后发现一款真正 <strong>开箱即用</strong> 的终端 <strong><code>Fish</code></strong> ，它可以通过包管理器 <code>apt / yum / dnf</code> 一键安装，并在不需要任何配置的情况下，达到比传统的 <code>Bash</code> 更好用的状态</p>
+<a id="more"></a>
+<h2 id="介绍">介绍</h2>
+<h3 id="特点：">特点：</h3>
+<ul>
+<li><strong>建议</strong>：Fish 会提示你之前写过的命令。当经常输入相同命令时，这样可以提高生产率。</li>
+<li><strong>基于手册页的补全</strong>：Fish 会根据命令的手册页 <code>man</code> 适当的补全参数。</li>
+<li><strong>语法高亮</strong>：Fish 会高亮显示命令语法以使其在视觉上友好。</li>
+</ul>
+<h3 id="Fish-和-zsh-的对比：">Fish 和 zsh 的对比：</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Zsh</th>
+<th>Fish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>新手友好度</strong></td>
+<td>需要一定的配置</td>
+<td>开箱即用</td>
+</tr>
+<tr>
+<td><strong>兼容性</strong></td>
+<td>能与 Bash 良好兼容</td>
+<td>与 Bash 兼容性不佳</td>
+</tr>
+<tr>
+<td><strong>运行效率</strong></td>
+<td>良好</td>
+<td>效率逊于 Zsh</td>
+</tr>
+<tr>
+<td><strong>适用场景</strong></td>
+<td>适合长期使用</td>
+<td>适合短期使用/临时部署服务使用</td>
+</tr>
+</tbody>
+</table>
+<h2 id="安装使用：">安装使用：</h2>
+<h3 id="安装">安装</h3>
+<ul>
+<li>
+<p>Centos:</p>
+<ul>
+<li><code>yum install fish</code></li>
+</ul>
+</li>
+<li>
+<p>Ubuntu:</p>
+<ul>
+<li><code>apt install fish</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="使用">使用</h3>
+<h4 id="启动-Fish">启动 Fish</h4>
+<p>由于 <strong>兼容性问题</strong>，不太推荐大家使用 <code>chsh -s /usr/bin/fish</code> 命令把 <code>fish</code> 设置为默认 shell 程序，而采用运行 <code>fish</code> 命令方式在当前终端会话中启动，毕竟还是用 <code>bash</code> 语法的多 🙃 。</p>
+<h4 id="历史命令补全">历史命令补全</h4>
+<p>当键入历史命令时，会有灰色文本显示之前编写的命令，只需按 <code>CTRL+F</code> 或 <code>右方向键</code> 即可自动补全。</p>
+<h4 id="Tab-补全">Tab 补全</h4>
+<p>通过输入连接号（<code>–</code>）然后使用 <code>TAB</code> 键，<code>fish</code> 会根据对应命令的帮助手册 <code>man</code> 获取参数建议：</p>
+<ul>
+<li>按一次 <code>TAB</code>，它将显示前几个建议（或所有建议，如果只有少量参数可用）</li>
+<li>按二次  <code>TAB</code>，它将显示所有建议。</li>
+<li>连续三次按 <code>TAB</code>，它将切换到交互模式，你可以使用方向键选择一个参数。</li>
+</ul>
+<h2 id="Oh-My-Fish-让-fish-更强大">Oh My Fish 让 fish 更强大</h2>
+<p><a href="https://github.com/oh-my-fish/oh-my-fish/blob/master/docs/zh-CN/README.md" target="_blank" rel="noopener external nofollow noreferrer">官方文档 Zh-cn 中文</a></p>
+<p>跟 <code>zsh</code> 的 <code>oh-my-zsh</code> 类似，使用了一两天后，发现 <code>fish</code> 居然也有一款社区开源的<strong>配置框架</strong>文件 <code>Oh My Fish </code> (简称 <code>omf</code> )</p>
+<p>它让每一个使用者可以轻松安装插件或随心所欲更换 Shell 外观样式，并且和 <code>fish</code> 一样近乎开箱即用，让你<strong>如鱼得水</strong>。</p>
+<p>使用 <code>omf</code> 命令，你可以根据你的想法，很容易地安装主题来丰富外观 和 安装插件来增强你的 Fish shell。</p>
+<h3 id="安装-v2">安装</h3>
+<h4 id="安装-Oh-My-Fish">安装 Oh My Fish</h4>
+<ul>
+<li>curl 方式
+<ul>
+<li><code>curl -L https://get.oh-my.fish | fish</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>完成后你会发现 <code>fish shell</code> 已经变得更漂亮，可以直接食用，也可以选择跟着后面的步骤让它变得 <strong>更强大</strong></p>
+</blockquote>
+<h4 id="卸载-Oh-My-Fish">卸载 Oh My Fish</h4>
+<ul>
+<li><code>omf destroy</code></li>
+</ul>
+<h3 id="omf-命令使用">omf 命令使用</h3>
+<p><code>omf</code> 可以简单的理解为一个类似于 <code>apt/yum</code> 这样的包管理器命令吧</p>
+<h4 id="安装主题和插件">安装主题和插件</h4>
+<h5 id="查看可用和已安装的主题：">查看可用和已安装的主题：</h5>
+<ul>
+<li>
+<p><code>omf theme</code></p>
+<blockquote>
+<p><a href="https://link.zhihu.com/?target=https%3A//github.com/oh-my-fish/oh-my-fish/blob/master/docs/Themes.md" rel="external nofollow noreferrer">可以点击进入官方文档预览所有主题</a></p>
+</blockquote>
+</li>
+</ul>
+<h5 id="安装一个-主题-or-插件：">安装一个 主题 or 插件：</h5>
+<ul>
+<li>
+<p><code>omf install [theme-name or plugin-name]</code></p>
+</li>
+<li>
+<p><code>omf install  vi-mode  z extract bira weather</code></p>
+<blockquote>
+<p>插件可在 <a href="https://github.com/oh-my-fish" target="_blank" rel="noopener external nofollow noreferrer"><code>omf</code>  主仓库</a> 中寻找</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="选择主题">选择主题</h5>
+<p>安装了多个主题后需要切换另一个主题</p>
+<ul>
+<li><code>omf theme [theme-name]</code></li>
+</ul>
+<h4 id="安装-bobthefish-主题">安装 bobthefish 主题</h4>
+<p><a href="https://github.com/oh-my-fish/theme-bobthefish" target="_blank" rel="noopener external nofollow noreferrer">bothefish theme 项目主页 900+ star</a></p>
+<p>这是一个大致基于 <a href="https://gist.github.com/agnoster/3712874" target="_blank" rel="noopener external nofollow noreferrer">oh-my-zsh agnoster</a> 的主题</p>
+<h5 id="安装字体依赖包">安装字体依赖包</h5>
+<details><summary>因博主安装字体后不知如何应用字体，所以折叠跳过</summary> 
+<p>字体依赖包 <a href="https://github.com/powerline/fonts" target="_blank" rel="noopener external nofollow noreferrer">Powerline fonts</a></p>
+<ul>
+<li>
+<p>debian、ubuntu：<code>apt-get install fonts-powerline</code></p>
+</li>
+<li>
+<p>other systems：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/powerline/fonts.git --depth=1</span><br><span class="line"><span class="built_in">cd</span> fonts &amp;&amp; ./install.sh</span><br><span class="line"><span class="built_in">cd</span> .. &amp;&amp; rm -rf fonts</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</details>
+<h5 id="安装主题：">安装主题：</h5>
+<ul>
+<li><code>omf install bobthefish</code></li>
+</ul>
+<h5 id="更换配色方案">更换配色方案</h5>
+<ul>
+<li><code>set -g theme_color_scheme dark</code>  选用默认<code>dark</code>配色</li>
+<li><strong>可选配色：</strong>
+<ul>
+<li><code>dark</code>. The default bobthefish theme.</li>
+<li><code>light</code>. A lighter version of the default theme.</li>
+<li><code>solarized</code> (or <code>solarized-dark</code>), <code>solarized-light</code>. Dark and light variants of Solarized.</li>
+<li><code>base16</code> (or <code>base16-dark</code>), <code>base16-light</code>. Dark and light variants of the default Base16 theme.</li>
+<li><code>zenburn</code>. An adaptation of Zenburn.</li>
+<li><code>gruvbox</code>. An adaptation of gruvbox.</li>
+<li><code>dracula</code>. An adaptation of dracula.</li>
+<li><code>nord</code>. An adaptation of nord.</li>
+</ul>
+</li>
+</ul>
+<h4 id="包管理">包管理</h4>
+<h5 id="列出已安装的主题和插件：">列出已安装的主题和插件：</h5>
+<ul>
+<li>
+<p><code>omf list</code></p>
+<blockquote>
+<p>所有官方和社区支持的包（包括插件和主题）都托管在 <a href="https://github.com/oh-my-fish" target="_blank" rel="noopener external nofollow noreferrer"><code>omf</code> 主仓库</a> 中。在主仓库里，你可以看到大量的仓库，其中包含大量的插件和主题。</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="寻找包">寻找包</h5>
+<ul>
+<li>
+<p><code>omf search [theme-name or plugin-name]</code>    寻找主题 or 插件</p>
+</li>
+<li>
+<p><strong>限制寻找范围</strong></p>
+<ul>
+<li><code>-t</code>: 只搜索主题<br>
+<code>-p</code>: 只搜索插件</li>
+</ul>
+</li>
+</ul>
+<h5 id="更新包">更新包</h5>
+<ul>
+<li><code>omf update</code>  更新所有包</li>
+<li><code>omf update omf</code> 更新 omf 包</li>
+<li><code>omf update [name]</code> 更新指定 name 包</li>
+</ul>
+<h2 id="注解与参考">注解与参考</h2>
+<h3 id="参考">参考</h3>
+<blockquote>
+<p>前人栽树后人乘凉…</p>
+</blockquote>
+<p><a href="https://github.com/oh-my-fish/theme-bobthefish" target="_blank" rel="noopener external nofollow noreferrer"><strong>bobthefish</strong> ：A Powerline-style, Git-aware  fish theme optimized for awesome.</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/124293772" target="_blank" rel="noopener external nofollow noreferrer">Fish：一个友好的交互式 Shell | Linux 中国</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/35448750" target="_blank" rel="noopener external nofollow noreferrer">Oh My Fish! 让你的 Shell 漂亮起来</a></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章 | Related Post</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\Ranger\" rel="bookmark">Ranger，命令行 UI 化的文件管理器</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\Zsh_and_oh-my-zsh\" rel="bookmark">Zsh，一款现代化的 Linux Shell 终端</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\Scoop\" rel="bookmark">Scoop，一款Windows的包管理器</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\Cmder\" rel="bookmark">Cmder，一款增强版的 Windows 命令行</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
+  <div>在线乞讨😋，Donate comment here.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://www.kuaizhan.com/common/encode-png?large=true&data=wxp://f2f08m7C2fbXDFEvgSXwdlE7Dd_iCJoq171U" alt="Liaozhebin 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://www.kuaizhan.com/common/encode-png?large=true&data=HTTPS://QR.ALIPAY.COM/FKX0053359DAGKKNTKW99D" alt="Liaozhebin 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Liaozhebin
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://592592.xyz/2020/fish/" title="Fish，真正开箱即用的 Linux Shell 终端">https://592592.xyz/2020/fish/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Shell/" rel="tag"># Shell</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/fish/" rel="tag"># fish</a>
+              <a href="/tags/oh-my-fish/" rel="tag"># oh-my-fish</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/Zsh_and_oh-my-zsh/" rel="prev" title="Zsh，一款现代化的 Linux Shell 终端">
+      <i class="fa fa-chevron-left"></i> Zsh，一款现代化的 Linux Shell 终端
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/Ranger/" rel="next" title="antigen，Zsh 的包管理器">
+      antigen，Zsh 的包管理器 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+            <li class="tab"><a href="#comment-valine">valine</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane livere" id="comment-livere">
+              
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80ODg5MC8yNTM4NA"></div>
+  </div>
+  
+            </div>
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="valine-comments"></div>
+            </div>
+        </div>
+      </div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#介绍"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点："><span class="nav-number">1.1.</span> <span class="nav-text">特点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fish-和-zsh-的对比："><span class="nav-number">1.2.</span> <span class="nav-text">Fish 和 zsh 的对比：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装使用："><span class="nav-number">2.</span> <span class="nav-text">安装使用：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">2.2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#启动-Fish"><span class="nav-number">2.2.1.</span> <span class="nav-text">启动 Fish</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#历史命令补全"><span class="nav-number">2.2.2.</span> <span class="nav-text">历史命令补全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tab-补全"><span class="nav-number">2.2.3.</span> <span class="nav-text">Tab 补全</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oh-My-Fish-让-fish-更强大"><span class="nav-number">3.</span> <span class="nav-text">Oh My Fish 让 fish 更强大</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-v2"><span class="nav-number">3.1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-Oh-My-Fish"><span class="nav-number">3.1.1.</span> <span class="nav-text">安装 Oh My Fish</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#卸载-Oh-My-Fish"><span class="nav-number">3.1.2.</span> <span class="nav-text">卸载 Oh My Fish</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#omf-命令使用"><span class="nav-number">3.2.</span> <span class="nav-text">omf 命令使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装主题和插件"><span class="nav-number">3.2.1.</span> <span class="nav-text">安装主题和插件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查看可用和已安装的主题："><span class="nav-number">3.2.1.1.</span> <span class="nav-text">查看可用和已安装的主题：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装一个-主题-or-插件："><span class="nav-number">3.2.1.2.</span> <span class="nav-text">安装一个 主题 or 插件：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#选择主题"><span class="nav-number">3.2.1.3.</span> <span class="nav-text">选择主题</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-bobthefish-主题"><span class="nav-number">3.2.2.</span> <span class="nav-text">安装 bobthefish 主题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装字体依赖包"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">安装字体依赖包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装主题："><span class="nav-number">3.2.2.2.</span> <span class="nav-text">安装主题：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#更换配色方案"><span class="nav-number">3.2.2.3.</span> <span class="nav-text">更换配色方案</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包管理"><span class="nav-number">3.2.3.</span> <span class="nav-text">包管理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#列出已安装的主题和插件："><span class="nav-number">3.2.3.1.</span> <span class="nav-text">列出已安装的主题和插件：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#寻找包"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">寻找包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#更新包"><span class="nav-number">3.2.3.3.</span> <span class="nav-text">更新包</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注解与参考"><span class="nav-number">4.</span> <span class="nav-text">注解与参考</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">4.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Liaozhebin"
+      src="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
+  <p class="site-author-name" itemprop="name">Liaozhebin</p>
+  <div class="site-description" itemprop="description">记录生活&分享知识</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/liaozhebin" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liaozhebin" rel="noopener external nofollow noreferrer" target="_blank"><i class="github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:liaozhebin@gmail.com" title="E-Mail → mailto:liaozhebin@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/2617028971" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;2617028971" rel="noopener external nofollow noreferrer" target="_blank"><i class="weibo fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="facebook fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="instagram fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://liaozhebin.top/" title="https:&#x2F;&#x2F;liaozhebin.top" rel="noopener external nofollow noreferrer" target="_blank">Title ||</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://yh.liaozhebin.top/" title="http:&#x2F;&#x2F;yh.liaozhebin.top" rel="noopener external nofollow noreferrer" target="_blank">淘宝优惠 ||</a>
+        </li>
+    </ul>
+  </div>
+
+
+    <div class="links-of-blogroll motion-element links-of-blogroll-block">
+      <div class="links-of-blogroll-title">
+        <!-- modify icon to fire by szw -->
+        <i class="fa fa-history fa-" aria-hidden="true"></i>
+        近期文章
+      </div>
+      <ul class="links-of-blogroll-list">
+       
+        
+          <li>
+            <a href="/2020/RDPWrap_fix/" title="RDPWrap，Windows 多用户远程连接补丁" target="_blank">RDPWrap，Windows 多用户远程连接补丁</a>
+          </li>
+        
+          <li>
+            <a href="/2020/Handwriting/" title="造假记：手写字迹仿真" target="_blank">造假记：手写字迹仿真</a>
+          </li>
+        
+          <li>
+            <a href="/2020/Ranger/" title="Ranger，命令行 UI 化的文件管理器" target="_blank">Ranger，命令行 UI 化的文件管理器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/Scoop/" title="Scoop，一款Windows的包管理器" target="_blank">Scoop，一款Windows的包管理器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/Ranger/" title="antigen，Zsh 的包管理器" target="_blank">antigen，Zsh 的包管理器</a>
+          </li>
+        
+      </ul>
+    </div>
+
+
+
+<div class="translate-style">
+繁/简：<a id="translateLink" href="javascript:translatePage();" rel="external nofollow noreferrer">繁体
+</a>
+</div>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script type="text/javascript">
+var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+var cookieDomain = "https://tding.top/"; //Cookie地址, 一定要设定, 通常为你的网址
+var msgToTraditionalChinese = "繁体"; //此处可以更改为你想要显示的文字
+var msgToSimplifiedChinese = "简体"; //同上，但两处均不建议更改
+var translateButtonId = "translateLink"; //默认互换id
+translateInitilization();
+</script>
+
+
+
+<div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener external nofollow noreferrer" target="_blank">粤ICP备17129576号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liaozhebin</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">50k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">46 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+  <div class="addthis_inline_share_toolbox">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e5bf6d4848b31d5" async="async"></script>
+  </div><!--繁体简体切换-->
+// 繁体简体切换
+<div class="translate-style">
+繁/简：<a id="translateLink" href="javascript:translatePage();" rel="external nofollow noreferrer">繁体
+</a>
+</div>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script type="text/javascript">
+var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+var cookieDomain = "https://tding.top/"; //Cookie地址, 一定要设定, 通常为你的网址
+var msgToTraditionalChinese = "繁体"; //此处可以更改为你想要显示的文字
+var msgToSimplifiedChinese = "简体"; //同上，但两处均不建议更改
+var translateButtonId = "translateLink"; //默认互换id
+translateInitilization();
+</script>
+
+//网站运行时间
+<!--网站运行时间-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("02/02/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+<!--Canvas Nest-->
+<!-- 由于无法关闭移动的端不显示该动画，故展示不采用footer中的方案
+<script color="255,51,51" opacity="0.55" zIndex="-1" count="300" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+--!>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script color='240,250,0' opacity='0.75' zIndex='-1' count='260' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest-nomobile.min.js"></script>
+  <script size="320" alpha="0.51" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://592592.xyz/2020/fish/',]
+      });
+      });
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : true,
+      notify     : true,
+      appId      : 'Mob7jfKItdoakJ4ONUA3w5st-MdYXbMMI',
+      appKey     : 'to7wiC6yzSBEvTtwbaXMG3WM',
+      placeholder: "ヾﾉ≧∀≦)o 来啊，快活啊! &#13;&#10; (╹ڡ╹ ) 支持 Markdown 语法和预览噢 &#13;&#10; (。・∀・)ノ 要记得留下邮箱哟~ &#13;&#10;(●ˇ∀ˇ●) 这样才能收到主人回复的通知提醒呢😋",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '15' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+  <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+  <script async src="/js/cursor/explosion.min.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+
+
+
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/crash_cheat.js"></script>
+
+<!-- 爆炸效果 -->
+<!-- <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script> -->
+
+
+
+
+
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class="fa fa-chevron-down"></i>
+    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class="fa fa-chevron-up"></i>
+    </div>
+    
+  </div>
+  <div class="moon-menu-button" onclick="moonMenuClick()">
+    <svg class="moon-menu-svg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+      <g class="moon-menu-points">
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle>
+        <circle class="moon-menu-point" r=".2rem"></circle>
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle>
+      </g>
+    </svg>
+    <div class="moon-menu-icon">
+    </div>
+    <div class="moon-menu-text">
+    </div>
+  </div>
+</div>
+
+<script>
+
+  const moonMenuListener = function () {
+
+    //Get scroll percent
+    let offsetHeight = document.documentElement.offsetHeight;
+    let scrollHeight = document.documentElement.scrollHeight;
+    var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+    let percent = Math.round(scrollTop / (scrollHeight - offsetHeight) * 100);
+    if (percent > 100) percent = 100;
+
+    let menuText = document.querySelector('.moon-menu-text');
+    let menuPoints = document.querySelector('.moon-menu-points');
+    if (!percent) {
+      percent = 0;
+      menuText.style.display = 'none';
+      menuPoints.style.display = 'block';
+    } else {
+      menuText.style.display = 'block';
+      menuPoints.style.display = 'none';
+      menuText.innerHTML = percent + '%';
+    }
+
+    //Update strokeDasharray
+    let length = 196;
+    document.querySelector('.moon-menu-border').style.strokeDasharray = percent * length / 100 + ' ' + length;
+
+  }
+
+  window.addEventListener('load', () => {
+    moonMenuListener();
+  });
+  window.addEventListener('scroll', moonMenuListener);
+
+  const moonMenuClick = function () {
+    let items = document.querySelector('.moon-menu-items')
+    items.classList.toggle('active');
+    let points = document.querySelectorAll('.moon-menu-point');
+    let childItems = document.querySelectorAll('.moon-menu-item');
+    if (items.classList.contains('active')) {
+      points[0].setAttribute("cx", "-.8rem");
+      points[0].setAttribute("cy", "0");
+      points[2].setAttribute("cx", ".8rem");
+      points[2].setAttribute("cy", "0");
+      for (let i = 0; i < childItems.length; i++) {
+        childItems[i].style.top = -3 - 3 * i + 'rem';
+        childItems[i].style.opacity = .9;
+      }
+    } else {
+      points[0].setAttribute("cx", "0");
+      points[0].setAttribute("cy", "-.8rem");
+      points[2].setAttribute("cx", "0");
+      points[2].setAttribute("cy", ".8rem");
+      for (let i = 0; i < childItems.length; i++) {
+        childItems[i].style.top = '1rem';
+        childItems[i].style.opacity = 0;
+      }
+    }
+  };
+
+  const back2top = () => {
+    window.scroll({ top: 0, behavior: 'smooth' });
+  }
+
+  const back2bottom = () => {
+    let offsetHeight = document.documentElement.offsetHeight;
+    let scrollHeight = document.documentElement.scrollHeight;
+    window.scroll({ top: (scrollHeight - offsetHeight), behavior: 'smooth' });
+  }
+
+</script>
+</body>
+</html>

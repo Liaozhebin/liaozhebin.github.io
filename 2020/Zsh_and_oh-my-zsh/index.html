@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Amita:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"592592.xyz","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="README 本文介绍了 Zsh是什么，与传统的bash有什么不同，如何安装并使用，Shell的概念，以及zsh的配置集oh-my-zsh的主题与插件的使用。 zsh 是一款 成熟稳定，现代化的 shell，兼容于传统的 bash  sh 的同时，比它们拥有更强大的功能。以至于苹果系统已将 zsh 取代 bash 作为系统默认的 shell 了[1]. oh-my-zsh集成了 zsh 的 配置文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zsh，一款现代化的 Linux Shell 终端">
+<meta property="og:url" content="https://592592.xyz/2020/Zsh_and_oh-my-zsh/index.html">
+<meta property="og:site_name" content="Bingo | zhrbin">
+<meta property="og:description" content="README 本文介绍了 Zsh是什么，与传统的bash有什么不同，如何安装并使用，Shell的概念，以及zsh的配置集oh-my-zsh的主题与插件的使用。 zsh 是一款 成熟稳定，现代化的 shell，兼容于传统的 bash  sh 的同时，比它们拥有更强大的功能。以至于苹果系统已将 zsh 取代 bash 作为系统默认的 shell 了[1]. oh-my-zsh集成了 zsh 的 配置文">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/configuration-wizard.gif">
+<meta property="og:image" content="https://asciinema.org/a/37390.png">
+<meta property="article:published_time" content="2020-04-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-05-02T16:00:00.000Z">
+<meta property="article:author" content="Liaozhebin">
+<meta property="article:tag" content="Shell">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Zsh">
+<meta property="article:tag" content="oh-my-zsh">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/configuration-wizard.gif">
+
+<link rel="canonical" href="https://592592.xyz/2020/Zsh_and_oh-my-zsh/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Zsh，一款现代化的 Linux Shell 终端 | Bingo | zhrbin</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165928363-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-165928363-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9fb65a5a4370ac833060e18a9f952275";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Bingo | zhrbin" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bingo | zhrbin</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">随笔行舟,记录分享</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页 | Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于 | About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签 | Tags<span class="badge">22</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类 | Categories<span class="badge">20</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档 | Archives<span class="badge">11</span></a>
+
+  </li>
+        <li class="menu-item menu-item-link">
+
+    <a href="/links" rel="section"><i class="link fa-fw"></i>友情链接 | links</a>
+
+  </li>
+        <li class="menu-item menu-item-movies">
+
+    <a href="/movies/" rel="section"><i class="film fa-fw"></i>观影 | Movies</a>
+
+  </li>
+        <li class="menu-item menu-item-books">
+
+    <a href="/books/" rel="section"><i class="book fa-fw"></i>阅读 | books</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索 | Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/liaozhebin" class="github-corner" title="Follow me on GitHub | Github 大法好" aria-label="Follow me on GitHub | Github 大法好" rel="noopener external nofollow noreferrer" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://592592.xyz/2020/Zsh_and_oh-my-zsh/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
+      <meta itemprop="name" content="Liaozhebin">
+      <meta itemprop="description" content="记录生活&分享知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bingo | zhrbin">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Zsh，一款现代化的 Linux Shell 终端<a href="https://github.com/liaozhebin/repo-name/tree/branch-name/subdirectory-name_posts/zsh%E5%92%8Coh-my-zsh.md" class="post-edit-link" title="编辑" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-pencil-alt"></i></a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-26 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-26T00:00:00+08:00">2020-04-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-03 00:00:00" itemprop="dateModified" datetime="2020-05-03T00:00:00+08:00">2020-05-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/" itemprop="url" rel="index"><span itemprop="name">Shell</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Linux/%E6%95%99%E7%A8%8B-Tutorial/" itemprop="url" rel="index"><span itemprop="name">教程/Tutorial</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/Zsh_and_oh-my-zsh/" class="post-meta-item leancloud_visitors" data-flag-title="Zsh，一款现代化的 Linux Shell 终端" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/Zsh_and_oh-my-zsh/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/Zsh_and_oh-my-zsh/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+         <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>README</strong><br>
+本文介绍了 <code>Zsh</code>是什么，与传统的bash有什么不同，如何安装并使用，<code>Shell</code>的概念，以及zsh的配置集<code>oh-my-zsh</code>的主题与插件的使用。<br>
+<code>zsh</code> 是一款 <strong>成熟稳定，现代化</strong>的 shell，兼容于传统的 bash  sh 的同时，比它们拥有更强大的功能。以至于苹果系统已将 zsh 取代 bash 作为系统默认的 <code>shell</code> 了<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.<br>
+<code>oh-my-zsh</code>集成了 zsh 的 配置文件、主题 Themes、插件 Options，使任何人可以轻松的配置出一个 <strong>beautiful &amp; friendly</strong> 的 zsh，来提高生产效率。包括更智能的色彩高亮，历史目录快速跳转，kill 进程名按 tab 键 自动转 PID 等自动补齐功能。</p>
+<a id="more"></a>
+<hr>
+<blockquote>
+<p><strong>序言：</strong><br>
+广受本视频启蒙，特放此处，可以看作为本文的导览版视频，本文是根据此视频的基础上进行了增强。<br>
+感谢 <code>up</code> 主优先制作了这期视频。</p>
+<iframe src="//player.bilibili.com/player.html?aid=78082601&bvid=BV1pJ411B7HY&cid=133593554&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" height="400px"> </iframe>
+</blockquote>
+<h2 id="ZSH-是什么">ZSH 是什么</h2>
+<p>在这之前，你可能需要明白 <code>shell</code> 的概念</p>
+<blockquote>
+<p><code>shell</code> 是机器外面套一层命令行的壳，用于人际交互，<code>Linux</code> 下的 <code>Bash</code> 和 <code>sh</code> 都属于 <code>shell</code> 的一种</p>
+</blockquote>
+<p><code>zsh</code> 也是一种 <code>shell</code>，兼容于传统的 <code>bash</code>  <code>sh</code> 的同时，还比它们拥有更强大的功能。</p>
+<p>以至于苹果系统 <code>macOS Catalina</code> 开始 ，已将 <code>zsh</code> 取代 <code>bash</code> 作为系统默认的 <code>shell</code> 了<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1:1]</a></sup>，这证明了 <code>zsh</code> 是一款 **成熟稳定，现代化 **的 <code>shell</code> .</p>
+<h3 id="zsh-兼容性：">zsh 兼容性：</h3>
+<details>
+<summary> 💌 点击展开查看 </summary>  
+<h4 id="兼容原理：">兼容原理：</h4>
+<blockquote>
+<p>zsh 内建了一个仿真模式 emulation mode ，可以对 bash ksh csh 进行仿真，该模式下可以使用与 Bash 相同的语法和命令集，从而达到几乎完全的兼容 输入 <code>emulate  [ bash | csh | ksh ]</code> 进入他们的仿真模式。</p>
+</blockquote>
+<h4 id="兼容性的注意事项：">兼容性的注意事项：</h4>
+<ul>
+<li>
+<p><strong>echo  命令</strong></p>
+<blockquote>
+<p><code>echo</code> 是 <code>Bulit-in</code> 内置命令，zsh 下要被转义 <code>2</code> 次，内建 <code>bulit-in</code>一次，输出到终端一次，所以要 用 <code>-E</code>  显式指明不转义，以减少一次转义。<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+</blockquote>
+</li>
+</ul>
+</details>
+<h2 id="oh-my-zsh-是什么">oh-my-zsh 是什么</h2>
+<h3 id="博主描述">博主描述</h3>
+<p>正如 <code>bash</code> 有 <code>.bashrc</code> 配置文件，<code>zsh</code> 也有他的配置文件 <code>.zshrc</code>，而 <code>oh-my-zsh</code> 就是由开源社区维护并驱动的一款 <code>zsh</code> 配置文件的框架集。</p>
+<p>它集成扩展了广大 <code>zsh</code> 使用者的一些常用 <code>配置文件</code> <code>主题 Themes</code> <code>插件 Options</code>，使任何人可以轻松的配置出一个 <code>beautiful &amp; friendly</code> 的 <code>zsh</code>，来提高生产效率。</p>
+<p>包括更智能的色彩高亮，历史目录快速跳转，<code>kill</code> 进程名 <code>tab键</code> 自动转 <code>PID</code>，错误命令 <code>lls</code> 修正猜测 <code>ls</code> ，更强大的 <code>tab</code> 自动补齐功能等。</p>
+<h3 id="有趣的官方介绍">有趣的官方介绍</h3>
+<blockquote>
+<p>Oh My Zsh is an open source, community-driven framework for managing your <a href="https://www.zsh.org/" target="_blank" rel="noopener external nofollow noreferrer">zsh</a> configuration.</p>
+<p>Sounds boring. Let’s try again.</p>
+<p><strong>Oh My Zsh will not make you a 10x developer…but you may feel like one.</strong></p>
+<p>Once installed, your terminal shell will become the talk of the town <em>or your money back!</em> With each keystroke in your command prompt, you’ll take advantage of the hundreds of powerful plugins and beautiful themes. Strangers will come up to you in cafés and ask you, <em>“that is amazing! are you some sort of genius?”</em></p>
+<p>Finally, you’ll begin to get the sort of attention that you have always felt you deserved. …or maybe you’ll use the time that you’re saving to start flossing more often. 😬</p>
+</blockquote>
+<h2 id="安装与使用">安装与使用</h2>
+<h3 id="zsh安装">zsh安装</h3>
+<p><strong>版本最好 &gt;5 越新越好</strong></p>
+<ul>
+<li>Debian：<code>apt-get install zsh fzf &amp;&amp; zsh --version &amp;&amp; chsh -s $(which zsh)</code></li>
+<li>Centos：<code>yum instasll zsh &amp;&amp; zsh --version &amp;&amp; chsh -s $(which zsh)</code></li>
+</ul>
+<h3 id="oh-my-zsh-安装">oh-my-zsh 安装</h3>
+<p><code>curl</code> 和 <code>wget</code> 二选一</p>
+<ul>
+<li><strong>via curl</strong> :</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>via wget</strong> ：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure>
+<h4 id="我翻译和优化的-zshrc-文件">我翻译和优化的 <code>.zshrc</code> 文件</h4>
+<p>虽然配置文件架构很简单，但是我还是翻译了配置文件中的常用选项释义，希望能帮助到 <strong>英文不好</strong> 的你修改出一个适合自己的配置文件。</p>
+<p><a href="https://raw.githubusercontent.com/Liaozhebin/files/master/.zshrc" target="_blank" rel="noopener external nofollow noreferrer">文件地址</a></p>
+<p>我的配置文件选用了 <code>bira</code> 主题 ，选用的插件有</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fzf <span class="keyword">history</span> <span class="keyword">history</span>-substring-<span class="built_in">search</span> zsh-interactive-<span class="keyword">cd</span> <span class="keyword">vi</span>-<span class="keyword">mode</span> extract pip docker docker-compose alias-finder</span><br></pre></td></tr></table></figure>
+<p>因为使用了更优秀的 <code>z.lua</code> 路径插件，为避免冲突，所以没有选用 <code>z</code> 插件，有需要的可以自己添加噢。</p>
+<h5 id="下载使用我最新的-zshrc-配置：">下载使用我最新的 .zshrc 配置：</h5>
+   <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bash</span><br><span class="line"> <span class="keyword">cd</span> ~ &amp;&amp; curl -LO http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/Liaozhebin/<span class="keyword">files</span>/master/.zshrc  &amp;&amp; <span class="keyword">source</span> .zshrc</span><br></pre></td></tr></table></figure>
+<h4 id="使用内置主题">使用内置主题</h4>
+<p>开始全部看了一下，记录了比较美观整洁的有：<code>simple</code> <code>suvash</code> <code>wedisagree</code>  <code>ys</code>  <code>robbyrussell</code> <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#agnoster" target="_blank" rel="noopener external nofollow noreferrer">agnoster</a>  <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#bira" target="_blank" rel="noopener external nofollow noreferrer">bira  </a>，其中 <code>robbyrussell</code>是 <code>oh-my-zsh</code> 的默认主题，最后选定了以下 <code>2</code> 款使用</p>
+<ol>
+<li>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#bira" target="_blank" rel="noopener external nofollow noreferrer">bira  </a> : 2行显示，路径 和 Git 项目状态颜色渲染</p>
+</li>
+<li>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#agnoster" target="_blank" rel="noopener external nofollow noreferrer">agnoster</a>  ： 单行显示，路径文字背景渲染</p>
+</li>
+</ol>
+<p>其中也可以 更改主题名为 <code>random</code>，这样每次使用 zsh 终端会随机应用一个<strong>内置</strong>主题，这样可以很方便的体验每一个主题的，并对喜爱的进行收藏。</p>
+<blockquote>
+<p>使用外置主题不能使用 <code>random</code> 随机参数，此参数只针对内置主题进行随机应用</p>
+<blockquote>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Customization#overriding-and-adding-themes" target="_blank" rel="noopener external nofollow noreferrer">摘自官方wiki</a>：Note: Using a random theme with <code>$ZSH_THEME=&quot;random&quot;</code> will not look into your custom themes directory. Only built-in themes will be used. (Until PR <a href="https://github.com/ohmyzsh/ohmyzsh/pull/3743" target="_blank" rel="noopener external nofollow noreferrer">#3743</a> is merged, which makes <code>random</code> include custom themes.)</p>
+</blockquote>
+</blockquote>
+<h4 id="安装外部主题">安装外部主题</h4>
+<h5 id="首先解决依赖">首先解决依赖</h5>
+<ol>
+<li>
+<p>保证版本号 zsh &gt;5 ，同时部分主题插件有详细的要求，比如版本 &gt;5.3，详情见其 Documents</p>
+</li>
+<li>
+<p><strong>非必须</strong> 想要顺利安装使用外部主题，还需要安装字体依赖包 <a href="https://github.com/powerline/fonts" target="_blank" rel="noopener external nofollow noreferrer">Powerline fonts</a></p>
+</li>
+</ol>
+<details><summary>因博主安装字体后不知如何应用字体，所以折叠安装过程</summary> 
+<ul>
+<li>
+<p>debian、ubuntu：<code>apt-get install fonts-powerline</code></p>
+</li>
+<li>
+<p>fedora：<code>dnf install powerline-fonts</code></p>
+</li>
+<li>
+<p>other systems：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/powerline/fonts.git --depth=1</span><br><span class="line"><span class="built_in">cd</span> fonts &amp;&amp; ./install.sh</span><br><span class="line"><span class="built_in">cd</span> .. &amp;&amp; rm -rf fonts</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</details>
+<h5 id="选用外部主题">选用外部主题</h5>
+<p>外部主题太多了，浏览了前 40%+ 的主题预览图，筛选了以下这些比较讨眼缘的主题：</p>
+<ol>
+<li>
+<p><a href="https://github.com/maverick9000/zsh2000" target="_blank" rel="noopener external nofollow noreferrer">zsh2000  </a>[类agnoster]</p>
+</li>
+<li>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes" target="_blank" rel="noopener external nofollow noreferrer">Daivasmara</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes#philthy-theme" target="_blank" rel="noopener external nofollow noreferrer">Philthy</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes#random-emoji-theme" target="_blank" rel="noopener external nofollow noreferrer">Random Emoji Theme</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes#bullet-train" target="_blank" rel="noopener external nofollow noreferrer">Bullet train</a>[2.4k]</p>
+</li>
+<li>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes#powerlevel10k" target="_blank" rel="noopener external nofollow noreferrer">powerlevel10k</a>[5K]</p>
+</li>
+<li>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes#node-theme" target="_blank" rel="noopener external nofollow noreferrer">Node theme</a></p>
+</li>
+<li>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes#spaceship-zsh" target="_blank" rel="noopener external nofollow noreferrer">Spaceship ZSH</a>[11k]</p>
+</li>
+</ol>
+<p>最后经过粗略的二次对比，最后选择了 <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes#powerlevel10k" target="_blank" rel="noopener external nofollow noreferrer">powerlevel10k</a> 这款拥有 5K+ 收藏量的主题，其实这款主题还有同门一个大兄弟 <a href="https://github.com/Powerlevel9k/powerlevel9k" target="_blank" rel="noopener external nofollow noreferrer">powerlevel9k</a>，拥有 12.6K+ Star，因为种种原因<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup>而剥离出了 <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes#powerlevel10k" target="_blank" rel="noopener external nofollow noreferrer">powerlevel10k</a> 这个分支项目，同时兼容于 <a href="https://github.com/Powerlevel9k/powerlevel9k" target="_blank" rel="noopener external nofollow noreferrer">powerlevel9k</a> 的配置。</p>
+<h4 id="使用-powerlevel10k-外部主题：">使用 <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/External-themes#powerlevel10k" target="_blank" rel="noopener external nofollow noreferrer">powerlevel10k</a> 外部主题：</h4>
+<h5 id="环境要求：">环境要求：</h5>
+<ul>
+<li>
+<p>要求 <code>zsh</code> 版本 &gt; <code>5.1</code></p>
+</li>
+<li>
+<p>推荐安装 <a href="https://github.com/powerline/fonts" target="_blank" rel="noopener external nofollow noreferrer">Powerline fonts</a> 字体</p>
+</li>
+</ul>
+<h5 id="使用感受：">使用感受：</h5>
+<p>能显示命令执行花费时间，这点很棒。但是需要完成 <a href="https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/configuration-wizard.gif" target="_blank" rel="noopener external nofollow noreferrer">下图的初始化向导</a> 才能体现出这个主题的优势，所以个人觉得只适合在长期使用的主机上使用，<s>不适合在短期使用的云服务器上</s>。</p>
+<blockquote>
+<p>想在短期的服务器上使用，只需上传主题配置文件 <code>.p10k.zsh</code> 到 <code>~</code> 根目录即可。或者查看我的另一篇文章 <strong>antigen，zsh的包管理器</strong>。</p>
+</blockquote>
+<h5 id="安装过程：">安装过程：</h5>
+<ol>
+<li>安装：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://github.com/romkatv/powerlevel10k.git <span class="variable">$ZSH_CUSTOM</span>/themes/powerlevel10k`</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>vim修改 <code>.zshrc</code> 的主题参数为 <code>powerlevel10k/powerlevel10k</code></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>
+<p>输入 <code>p10k configure</code> 进入主题配置向导，配置好后的配置文件保存在 <code>~/.p10k.zsh</code> 中，如果这个文件不存在，正常情况下会启用初始化配置向导。（如下图）<img data-src="https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/configuration-wizard.gif" alt="配置向导演示"></p>
+</li>
+<li>
+<p>enjoy it to the max</p>
+</li>
+</ol>
+<h4 id="使用插件">使用插件</h4>
+<h5 id="内置插件">内置插件</h5>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins" target="_blank" rel="noopener external nofollow noreferrer">oh-my-zsh 内置插件列表</a></p>
+<h6 id="自己选用的插件如下">自己选用的插件如下</h6>
+<ul>
+<li><code>git fzf history-substring-search zsh-interactive-cd vi-mode extract pip docker docker-compose alias-finder</code></li>
+</ul>
+<ol>
+<li>
+<p><code>history</code>  别名插件 <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history" target="_blank" rel="noopener external nofollow noreferrer">Readme</a></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>h</code></td>
+<td><code>history</code></td>
+</tr>
+<tr>
+<td><code>hs</code></td>
+<td><code>history | grep</code></td>
+</tr>
+<tr>
+<td><code>hsi</code></td>
+<td><code>history | grep -i</code></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</li>
+<li>
+<p><code>zsh-history-substring-search</code></p>
+<blockquote>
+<p>输入历史记录命令中的任何部分，然后按选定的键（<code>UP</code> 和 <code>DOWN</code> 箭头）来循环进行匹配。<a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/history-substring-search" target="_blank" rel="noopener external nofollow noreferrer">Readme</a></p>
+</blockquote>
+</li>
+<li>
+<p><code>extract</code>  <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/extract" target="_blank" rel="noopener external nofollow noreferrer">Readme</a></p>
+<blockquote>
+<p>插件定义了一个名为的 <code>extract</code> 的函数，可以使用统一的 <code>extract</code> 命令解压多种类型的压缩文件，这样，您就不必知道要使用哪个特定命令来提取压缩文件。</p>
+</blockquote>
+</li>
+<li>
+<p><code>git</code> 别名插件 <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git" target="_blank" rel="noopener external nofollow noreferrer">Readme</a></p>
+</li>
+<li>
+<p><code>zsh-interactive-cd</code> <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-interactive-cd" target="_blank" rel="noopener external nofollow noreferrer">Readme</a></p>
+<blockquote>
+<p>此插件是 <code>fzf</code> 与 <code>cd</code> 结合的交互式路径模糊过滤插件，类似于 <code>z -I .</code> 的效果    &gt;<br>
+<strong>使用</strong> ： 输入 <code>cd</code> 后按 <code>control + o</code> 激活</p>
+</blockquote>
+</li>
+</ol>
+<h6 id="其他值得一试的内置插件">其他值得一试的内置插件</h6>
+<ol>
+<li>
+<p><code>z</code> 是路径快速跳转插件，类似于 z.lua <a href="http://z.sh" target="_blank" rel="noopener external nofollow noreferrer">z.sh</a> autojump</p>
+</li>
+<li>
+<p><code>timer</code> 是显示命令执行时间的插件。</p>
+</li>
+<li>
+<p><code>adb</code> 是 adb 的命令补全插件。</p>
+</li>
+<li>
+<p><code>cp</code> 是rsync的简化插件。</p>
+</li>
+<li>
+<p><code>tmux</code> 是 tmux 的 alias 别名插件。</p>
+</li>
+<li>
+<p><code>web-search plugin</code>：适合桌面用户，方便的打开输入关键词打开对应搜索引擎，类似于 Listary 的网页搜索。</p>
+</li>
+<li>
+<p><code>command-not-found</code> <a href="https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found" target="_blank" rel="noopener external nofollow noreferrer">Readme</a></p>
+<blockquote>
+<p>这是一个当你运行 <code>一个未知 or 错误命令</code> 时，插件会自动提示你可能需要安装相关名字的软件包</p>
+</blockquote>
+</li>
+</ol>
+<h5 id="外部扩展插件">外部扩展插件</h5>
+<p><a href="https://github.com/unixorn/awesome-zsh-plugins" target="_blank" rel="noopener external nofollow noreferrer">Awesome-zsh-plugins  外部扩展插件列表 </a></p>
+<p>外部插件可能需要 <strong>手动下载安装</strong>（而非主题直接下载到目录的方式），如 <code>z.lua</code>  <code>zsh-autosuggestion</code></p>
+<p>似乎不错的外置插件：</p>
+<ul>
+<li><code> mysql-colorize</code> mysql 命令着色插件似乎不错。</li>
+</ul>
+<h5 id="安装-zsh-autosuggestion-插件">安装 <code>zsh-autosuggestion</code> 插件</h5>
+<p>这是一个类似 <code>fish</code> 命令提示的外置插件，它会根据您的历史命令记录建议您键入的命令。</p>
+<blockquote>
+<p>演示效果：<br>
+<a href="https://asciinema.org/a/37390" rel="external nofollow noreferrer" target="_blank"><img data-src="https://asciinema.org/a/37390.png" width="400" text-align="center" /></a></p>
+</blockquote>
+<h6 id="安装步骤">安装步骤</h6>
+<p><a href="https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md" target="_blank" rel="noopener external nofollow noreferrer">Install Readme</a></p>
+<ol>
+<li>
+<p>Clone this repository into <code>$ZSH_CUSTOM/plugins</code> (by default <code>~/.oh-my-zsh/custom/plugins</code>)</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/zsh-users/</span>zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span><span class="regexp">/plugins/</span>zsh-autosuggestions</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Add the plugin to the list of plugins for Oh My Zsh to load (inside <code>~/.zshrc</code>):</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">plugins</span>=(zsh-autosuggestions)</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Start a new terminal session.</p>
+</li>
+</ol>
+<h4 id="总结：">总结：</h4>
+<p>外部主题或者插件文件添加到 <code>./oh-my-zsh</code> 下的 <code>plugins</code> 或 <code>themes</code> 文件夹中，回到 <code>~/.zshrc</code> 修改对应的主题插件名字后， <code>source</code> 引用即可（插件一般需要新建对应插件名的目录后放置文件）</p>
+<h3 id="z-lua-的安装">z.lua 的安装</h3>
+<h4 id="z-lua-介绍">z.lua 介绍</h4>
+<p><code>z.lua</code> 是一个快速路径切换工具（类似 <a href="http://z.sh" target="_blank" rel="noopener external nofollow noreferrer">z.sh</a> / autojump / fasd），兼容 Windows 和所有 Posix Shell 以及 Fish Shell 的同时包含了众多改进，它会跟踪你在 <code>shell</code> 下访问过的路径，经过一段简短的学习之后，<code>z.lua</code> 会帮你跳转到所有匹配正则关键字的路径里 <code>Frecent</code> 值最高的那条路径去，比如：<code>z foo bar</code>  可以匹配到  <code>/foo/bar</code></p>
+<p><a href="https://github.com/skywind3000/z.lua/blob/master/README.cn.md" target="_blank" rel="noopener external nofollow noreferrer">Z.lua zh-cn Readme 中文说明</a></p>
+<h4 id="正式安装">正式安装</h4>
+<ol>
+<li>安装 lua ： <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install -y fzf lua5.<span class="number">3</span> &amp;&amp; mv <span class="regexp">/usr/</span>bin<span class="regexp">/lua5.3 /u</span>sr<span class="regexp">/bin/</span>lua</span><br></pre></td></tr></table></figure>
+</li>
+<li>同步我最新的 .zshrc 配置：<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~ &amp;&amp; curl -LO http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/Liaozhebin/<span class="keyword">files</span>/master/.zshrc  &amp;&amp; <span class="keyword">source</span> .zshrc</span><br></pre></td></tr></table></figure>
+</li>
+<li>下载 z.lua：<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~ &amp;&amp; curl -LO http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/skywind3000/<span class="keyword">z</span>.<span class="keyword">lua</span>/master/<span class="keyword">z</span>.<span class="keyword">lua</span> &amp;&amp; chmod <span class="number">777</span> ./<span class="keyword">z</span>.<span class="keyword">lua</span> &amp;&amp; mv ./<span class="keyword">z</span>.<span class="keyword">lua</span> $ZSH_CUSTOM/ &amp;&amp; <span class="keyword">echo</span> <span class="string">'eval "$(lua      $ZSH_CUSTOM/z.lua --init zsh once enhanced)"'</span> &gt;&gt; ~/.zshrc &amp;&amp; <span class="keyword">echo</span>  <span class="keyword">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+</li>
+<li>添加 z.lua 的 alias<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo ' <span class="keyword">alias</span> zz=<span class="string">"z -i"</span>    # 使用交互式选择模式  \n <span class="keyword">alias</span> zf=<span class="string">"z -I"</span>      # 使用 fzf 对多个结果进行选择  \n <span class="keyword">alias</span> zft=<span class="string">"z -I -t"</span>   # 按时间权重排序 \n <span class="keyword">alias</span> zb=<span class="string">"z -b -i"</span>      # 快速回到父目录  \n <span class="keyword">alias</span> zbf=<span class="string">"z -b -f"</span>     # 使用 fzf 进行父目录筛选 \n ' &gt;&gt; ~/.zshrc &amp;&amp; echo  source  ~/.zshrc</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="lua-not-found-error"><strong><code>lua</code> not found error:</strong></h4>
+<p>if notice lua not found ，please install lua &amp; add alias to .zshrc or rename lua bin file，such as ：</p>
+<p>如果提示找不到 lua 安装后添加对应版本 alias 或 重命名 lua，例如：</p>
+<blockquote>
+<p><code>alias lua='lua5.3'</code> or  <code>mv /usr/bin/lua5.3 /usr/bin/lua</code></p>
+</blockquote>
+<h2 id="注解与参考">注解与参考</h2>
+<h3 id="参考">参考</h3>
+<blockquote>
+<p>前人栽树后人乘凉…</p>
+</blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/34197680" target="_blank" rel="noopener external nofollow noreferrer">知乎专栏：你明白 shell、bash 和 zsh 等词的真正含义吗？</a></p>
+<p><a href="https://github.com/powerline/fonts" target="_blank" rel="noopener external nofollow noreferrer">字体依赖包 Powerline fonts</a></p>
+<p><a href="https://www.bilibili.com/video/BV1pJ411B7HY?from=search&amp;seid=2756247263367460073" target="_blank" rel="noopener external nofollow noreferrer">Oh My ZSH!还在被命令行折腾的死去火来吗？这款软件用过的都说好！</a></p>
+<h3 id="注解">注解</h3>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://www.oschina.net/news/107223/macos-catalina-zsh-bash-shell-replacement" target="_blank" rel="noopener external nofollow noreferrer">取代 bash，macOS Catalina 使用 zsh 作为默认 Shell</a> <a href="#fnref1" class="footnote-backref">↩︎</a> <a href="#fnref1:1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://blog.csdn.net/lixinze779/article/details/81012318" target="_blank" rel="noopener external nofollow noreferrer">Zsh和Bash究竟有何不同</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://github.com/romkatv/powerlevel10k#what-is-the-relationship-between-powerlevel9k-and-powerlevel10k" target="_blank" rel="noopener external nofollow noreferrer">Powerlevel9k和Powerlevel10k之间是什么关系？</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章 | Related Post</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\Ranger\" rel="bookmark">Ranger，命令行 UI 化的文件管理器</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\fish\" rel="bookmark">Fish，真正开箱即用的 Linux Shell 终端</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\Scoop\" rel="bookmark">Scoop，一款Windows的包管理器</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\Cmder\" rel="bookmark">Cmder，一款增强版的 Windows 命令行</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
+  <div>在线乞讨😋，Donate comment here.</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://www.kuaizhan.com/common/encode-png?large=true&data=wxp://f2f08m7C2fbXDFEvgSXwdlE7Dd_iCJoq171U" alt="Liaozhebin 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://www.kuaizhan.com/common/encode-png?large=true&data=HTTPS://QR.ALIPAY.COM/FKX0053359DAGKKNTKW99D" alt="Liaozhebin 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Liaozhebin
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://592592.xyz/2020/Zsh_and_oh-my-zsh/" title="Zsh，一款现代化的 Linux Shell 终端">https://592592.xyz/2020/Zsh_and_oh-my-zsh/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener external nofollow noreferrer" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Shell/" rel="tag"># Shell</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/Zsh/" rel="tag"># Zsh</a>
+              <a href="/tags/oh-my-zsh/" rel="tag"># oh-my-zsh</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/Cmder/" rel="prev" title="Cmder，一款增强版的 Windows 命令行">
+      <i class="fa fa-chevron-left"></i> Cmder，一款增强版的 Windows 命令行
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/fish/" rel="next" title="Fish，真正开箱即用的 Linux Shell 终端">
+      Fish，真正开箱即用的 Linux Shell 终端 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+            <li class="tab"><a href="#comment-valine">valine</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane livere" id="comment-livere">
+              
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80ODg5MC8yNTM4NA"></div>
+  </div>
+  
+            </div>
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="valine-comments"></div>
+            </div>
+        </div>
+      </div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ZSH-是什么"><span class="nav-number">1.</span> <span class="nav-text">ZSH 是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#zsh-兼容性："><span class="nav-number">1.1.</span> <span class="nav-text">zsh 兼容性：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#兼容原理："><span class="nav-number">1.1.1.</span> <span class="nav-text">兼容原理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#兼容性的注意事项："><span class="nav-number">1.1.2.</span> <span class="nav-text">兼容性的注意事项：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#oh-my-zsh-是什么"><span class="nav-number">2.</span> <span class="nav-text">oh-my-zsh 是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#博主描述"><span class="nav-number">2.1.</span> <span class="nav-text">博主描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有趣的官方介绍"><span class="nav-number">2.2.</span> <span class="nav-text">有趣的官方介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装与使用"><span class="nav-number">3.</span> <span class="nav-text">安装与使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#zsh安装"><span class="nav-number">3.1.</span> <span class="nav-text">zsh安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#oh-my-zsh-安装"><span class="nav-number">3.2.</span> <span class="nav-text">oh-my-zsh 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#我翻译和优化的-zshrc-文件"><span class="nav-number">3.2.1.</span> <span class="nav-text">我翻译和优化的 .zshrc 文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#下载使用我最新的-zshrc-配置："><span class="nav-number">3.2.1.1.</span> <span class="nav-text">下载使用我最新的 .zshrc 配置：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用内置主题"><span class="nav-number">3.2.2.</span> <span class="nav-text">使用内置主题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装外部主题"><span class="nav-number">3.2.3.</span> <span class="nav-text">安装外部主题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#首先解决依赖"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">首先解决依赖</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#选用外部主题"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">选用外部主题</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-powerlevel10k-外部主题："><span class="nav-number">3.2.4.</span> <span class="nav-text">使用 powerlevel10k 外部主题：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#环境要求："><span class="nav-number">3.2.4.1.</span> <span class="nav-text">环境要求：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用感受："><span class="nav-number">3.2.4.2.</span> <span class="nav-text">使用感受：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装过程："><span class="nav-number">3.2.4.3.</span> <span class="nav-text">安装过程：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用插件"><span class="nav-number">3.2.5.</span> <span class="nav-text">使用插件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#内置插件"><span class="nav-number">3.2.5.1.</span> <span class="nav-text">内置插件</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#自己选用的插件如下"><span class="nav-number">3.2.5.1.1.</span> <span class="nav-text">自己选用的插件如下</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#其他值得一试的内置插件"><span class="nav-number">3.2.5.1.2.</span> <span class="nav-text">其他值得一试的内置插件</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#外部扩展插件"><span class="nav-number">3.2.5.2.</span> <span class="nav-text">外部扩展插件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装-zsh-autosuggestion-插件"><span class="nav-number">3.2.5.3.</span> <span class="nav-text">安装 zsh-autosuggestion 插件</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#安装步骤"><span class="nav-number">3.2.5.3.1.</span> <span class="nav-text">安装步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结："><span class="nav-number">3.2.6.</span> <span class="nav-text">总结：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#z-lua-的安装"><span class="nav-number">3.3.</span> <span class="nav-text">z.lua 的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#z-lua-介绍"><span class="nav-number">3.3.1.</span> <span class="nav-text">z.lua 介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正式安装"><span class="nav-number">3.3.2.</span> <span class="nav-text">正式安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lua-not-found-error"><span class="nav-number">3.3.3.</span> <span class="nav-text">lua not found error:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注解与参考"><span class="nav-number">4.</span> <span class="nav-text">注解与参考</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">4.1.</span> <span class="nav-text">参考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解"><span class="nav-number">4.2.</span> <span class="nav-text">注解</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Liaozhebin"
+      src="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
+  <p class="site-author-name" itemprop="name">Liaozhebin</p>
+  <div class="site-description" itemprop="description">记录生活&分享知识</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/liaozhebin" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liaozhebin" rel="noopener external nofollow noreferrer" target="_blank"><i class="github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:liaozhebin@gmail.com" title="E-Mail → mailto:liaozhebin@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/2617028971" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;2617028971" rel="noopener external nofollow noreferrer" target="_blank"><i class="weibo fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="twitter fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/yourname" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="facebook fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="instagram fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener external nofollow noreferrer" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://liaozhebin.top/" title="https:&#x2F;&#x2F;liaozhebin.top" rel="noopener external nofollow noreferrer" target="_blank">Title ||</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://yh.liaozhebin.top/" title="http:&#x2F;&#x2F;yh.liaozhebin.top" rel="noopener external nofollow noreferrer" target="_blank">淘宝优惠 ||</a>
+        </li>
+    </ul>
+  </div>
+
+
+    <div class="links-of-blogroll motion-element links-of-blogroll-block">
+      <div class="links-of-blogroll-title">
+        <!-- modify icon to fire by szw -->
+        <i class="fa fa-history fa-" aria-hidden="true"></i>
+        近期文章
+      </div>
+      <ul class="links-of-blogroll-list">
+       
+        
+          <li>
+            <a href="/2020/RDPWrap_fix/" title="RDPWrap，Windows 多用户远程连接补丁" target="_blank">RDPWrap，Windows 多用户远程连接补丁</a>
+          </li>
+        
+          <li>
+            <a href="/2020/Handwriting/" title="造假记：手写字迹仿真" target="_blank">造假记：手写字迹仿真</a>
+          </li>
+        
+          <li>
+            <a href="/2020/Ranger/" title="Ranger，命令行 UI 化的文件管理器" target="_blank">Ranger，命令行 UI 化的文件管理器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/Scoop/" title="Scoop，一款Windows的包管理器" target="_blank">Scoop，一款Windows的包管理器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/Ranger/" title="antigen，Zsh 的包管理器" target="_blank">antigen，Zsh 的包管理器</a>
+          </li>
+        
+      </ul>
+    </div>
+
+
+
+<div class="translate-style">
+繁/简：<a id="translateLink" href="javascript:translatePage();" rel="external nofollow noreferrer">繁体
+</a>
+</div>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script type="text/javascript">
+var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+var cookieDomain = "https://tding.top/"; //Cookie地址, 一定要设定, 通常为你的网址
+var msgToTraditionalChinese = "繁体"; //此处可以更改为你想要显示的文字
+var msgToSimplifiedChinese = "简体"; //同上，但两处均不建议更改
+var translateButtonId = "translateLink"; //默认互换id
+translateInitilization();
+</script>
+
+
+
+<div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener external nofollow noreferrer" target="_blank">粤ICP备17129576号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liaozhebin</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">50k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">46 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+  <div class="addthis_inline_share_toolbox">
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e5bf6d4848b31d5" async="async"></script>
+  </div><!--繁体简体切换-->
+// 繁体简体切换
+<div class="translate-style">
+繁/简：<a id="translateLink" href="javascript:translatePage();" rel="external nofollow noreferrer">繁体
+</a>
+</div>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script type="text/javascript">
+var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+var cookieDomain = "https://tding.top/"; //Cookie地址, 一定要设定, 通常为你的网址
+var msgToTraditionalChinese = "繁体"; //此处可以更改为你想要显示的文字
+var msgToSimplifiedChinese = "简体"; //同上，但两处均不建议更改
+var translateButtonId = "translateLink"; //默认互换id
+translateInitilization();
+</script>
+
+//网站运行时间
+<!--网站运行时间-->
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("02/02/2020 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+<!--Canvas Nest-->
+<!-- 由于无法关闭移动的端不显示该动画，故展示不采用footer中的方案
+<script color="255,51,51" opacity="0.55" zIndex="-1" count="300" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+--!>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script color='240,250,0' opacity='0.75' zIndex='-1' count='260' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest-nomobile.min.js"></script>
+  <script size="320" alpha="0.51" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://592592.xyz/2020/Zsh_and_oh-my-zsh/',]
+      });
+      });
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : true,
+      notify     : true,
+      appId      : 'Mob7jfKItdoakJ4ONUA3w5st-MdYXbMMI',
+      appKey     : 'to7wiC6yzSBEvTtwbaXMG3WM',
+      placeholder: "ヾﾉ≧∀≦)o 来啊，快活啊! &#13;&#10; (╹ڡ╹ ) 支持 Markdown 语法和预览噢 &#13;&#10; (。・∀・)ノ 要记得留下邮箱哟~ &#13;&#10;(●ˇ∀ˇ●) 这样才能收到主人回复的通知提醒呢😋",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '15' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+  <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+  <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+  <script async src="/js/cursor/explosion.min.js"></script>
+
+
+
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = true;
+    POWERMODE.shake = false;
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+
+
+
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/crash_cheat.js"></script>
+
+<!-- 爆炸效果 -->
+<!-- <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script> -->
+
+
+
+
+
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class="fa fa-chevron-down"></i>
+    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class="fa fa-chevron-up"></i>
+    </div>
+    
+  </div>
+  <div class="moon-menu-button" onclick="moonMenuClick()">
+    <svg class="moon-menu-svg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+      <g class="moon-menu-points">
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle>
+        <circle class="moon-menu-point" r=".2rem"></circle>
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle>
+      </g>
+    </svg>
+    <div class="moon-menu-icon">
+    </div>
+    <div class="moon-menu-text">
+    </div>
+  </div>
+</div>
+
+<script>
+
+  const moonMenuListener = function () {
+
+    //Get scroll percent
+    let offsetHeight = document.documentElement.offsetHeight;
+    let scrollHeight = document.documentElement.scrollHeight;
+    var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+    let percent = Math.round(scrollTop / (scrollHeight - offsetHeight) * 100);
+    if (percent > 100) percent = 100;
+
+    let menuText = document.querySelector('.moon-menu-text');
+    let menuPoints = document.querySelector('.moon-menu-points');
+    if (!percent) {
+      percent = 0;
+      menuText.style.display = 'none';
+      menuPoints.style.display = 'block';
+    } else {
+      menuText.style.display = 'block';
+      menuPoints.style.display = 'none';
+      menuText.innerHTML = percent + '%';
+    }
+
+    //Update strokeDasharray
+    let length = 196;
+    document.querySelector('.moon-menu-border').style.strokeDasharray = percent * length / 100 + ' ' + length;
+
+  }
+
+  window.addEventListener('load', () => {
+    moonMenuListener();
+  });
+  window.addEventListener('scroll', moonMenuListener);
+
+  const moonMenuClick = function () {
+    let items = document.querySelector('.moon-menu-items')
+    items.classList.toggle('active');
+    let points = document.querySelectorAll('.moon-menu-point');
+    let childItems = document.querySelectorAll('.moon-menu-item');
+    if (items.classList.contains('active')) {
+      points[0].setAttribute("cx", "-.8rem");
+      points[0].setAttribute("cy", "0");
+      points[2].setAttribute("cx", ".8rem");
+      points[2].setAttribute("cy", "0");
+      for (let i = 0; i < childItems.length; i++) {
+        childItems[i].style.top = -3 - 3 * i + 'rem';
+        childItems[i].style.opacity = .9;
+      }
+    } else {
+      points[0].setAttribute("cx", "0");
+      points[0].setAttribute("cy", "-.8rem");
+      points[2].setAttribute("cx", "0");
+      points[2].setAttribute("cy", ".8rem");
+      for (let i = 0; i < childItems.length; i++) {
+        childItems[i].style.top = '1rem';
+        childItems[i].style.opacity = 0;
+      }
+    }
+  };
+
+  const back2top = () => {
+    window.scroll({ top: 0, behavior: 'smooth' });
+  }
+
+  const back2bottom = () => {
+    let offsetHeight = document.documentElement.offsetHeight;
+    let scrollHeight = document.documentElement.scrollHeight;
+    window.scroll({ top: (scrollHeight - offsetHeight), behavior: 'smooth' });
+  }
+
+</script>
+</body>
+</html>

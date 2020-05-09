@@ -15,21 +15,20 @@
 <link rel="stylesheet" href="/css/main.css">
 
 <link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Amita:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css">
   <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","width":280,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"592592.xyz","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
-
 
   <meta name="description" content="This is my movie quote         .hexo-douban-tabs {     margin-bottom: 15px;     margin-top: 15px; }  .hexo-douban-tab {     padding: 5px; }  .hexo-douban-active {     background:">
 <meta property="og:type" content="website">
 <meta property="og:title" content="我的电影 &#x2F; My Moives">
-<meta property="og:url" content="http://yoursite.com/movies/index.html">
+<meta property="og:url" content="https://592592.xyz/movies/index.html">
 <meta property="og:site_name" content="Bingo | zhrbin">
 <meta property="og:description" content="This is my movie quote         .hexo-douban-tabs {     margin-bottom: 15px;     margin-top: 15px; }  .hexo-douban-tab {     padding: 5px; }  .hexo-douban-active {     background:">
 <meta property="og:locale" content="zh_CN">
@@ -44,7 +43,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2568902055.jpg">
 
-<link rel="canonical" href="http://yoursite.com/movies/">
+<link rel="canonical" href="https://592592.xyz/movies/">
 
 
 <script id="page-configurations">
@@ -52,15 +51,34 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false
+    isPost : false,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>我的电影 / My Moives | Bingo | zhrbin
-  </title>
+</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165928363-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-165928363-1');
+      }
+    </script>
 
 
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9fb65a5a4370ac833060e18a9f952275";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -107,14 +125,12 @@
 
   <div class="site-meta">
 
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Bingo | zhrbin</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-        <p class="site-subtitle">随笔行舟,记录分享</p>
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bingo | zhrbin</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">随笔行舟,记录分享</p>
   </div>
 
   <div class="site-nav-right">
@@ -125,47 +141,48 @@
 </div>
 
 
+
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页 | Home</a>
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页 | Home</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于 | About</a>
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于 | About</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签 | Tags<span class="badge">3</span></a>
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签 | Tags<span class="badge">22</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类 | Categories<span class="badge">3</span></a>
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类 | Categories<span class="badge">20</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档 | Archives<span class="badge">3</span></a>
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档 | Archives<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-link">
 
-    <a href="/links" rel="section"><i class="fa fa-fw fa-link"></i>友情链接 | links</a>
+    <a href="/links" rel="section"><i class="link fa-fw"></i>友情链接 | links</a>
 
   </li>
         <li class="menu-item menu-item-movies">
 
-    <a href="/movies/" rel="section"><i class="fa fa-fw fa-film"></i>观影 | Movies</a>
+    <a href="/movies/" rel="section"><i class="film fa-fw"></i>观影 | Movies</a>
 
   </li>
         <li class="menu-item menu-item-books">
 
-    <a href="/books/" rel="section"><i class="fa fa-fw fa-book"></i>阅读 | books</a>
+    <a href="/books/" rel="section"><i class="book fa-fw"></i>阅读 | books</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -173,16 +190,18 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off"
            placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -190,12 +209,15 @@
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
-</div>
-<div class="search-pop-overlay"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
   </div>
+</div>
+
+    </div>
+  </div>
+
 </div>
     </header>
 
@@ -210,17 +232,16 @@
         <div class="content-wrap">
           
 
-          <div class="content">
+          <div class="content page posts-expand">
             
 
-  <div class="posts-expand">
     
     
     
     <div class="post-block" lang="zh-CN">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">我的电影 / My Moives<a href="https://github.com/liaozhebin/repo-name/tree/branch-name/subdirectory-nameundefined" class="post-edit-link" title="编辑" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-pencil"></i></a>
+<h1 class="post-title" itemprop="name headline">我的电影 / My Moives<a href="https://github.com/liaozhebin/repo-name/tree/branch-name/subdirectory-nameundefined" class="post-edit-link" title="编辑" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-pencil-alt"></i></a>
 </h1>
 
 <div class="post-meta">
@@ -537,7 +558,6 @@ for (var i = 0; i < firstpages.length; i++) {
     
     
     
-  </div>
 
 
           </div>
@@ -545,7 +565,7 @@ for (var i = 0; i < firstpages.length; i++) {
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -594,7 +614,7 @@ for (var i = 0; i < firstpages.length; i++) {
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Liaozhebin"
-      src="https://i.loli.net/2019/12/02/54yfoBDxUtNvpRw.jpg">
+      src="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
   <p class="site-author-name" itemprop="name">Liaozhebin</p>
   <div class="site-description" itemprop="description">记录生活&分享知识</div>
 </div>
@@ -603,20 +623,20 @@ for (var i = 0; i < firstpages.length; i++) {
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -627,22 +647,22 @@ for (var i = 0; i < firstpages.length; i++) {
   </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/liaozhebin" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liaozhebin" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+        <a href="https://github.com/liaozhebin" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liaozhebin" rel="noopener external nofollow noreferrer" target="_blank"><i class="github fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:liaozhebin@gmail.com" title="E-Mail → mailto:liaozhebin@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+        <a href="mailto:liaozhebin@gmail.com" title="E-Mail → mailto:liaozhebin@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="envelope fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/2617028971" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;2617028971" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+        <a href="https://weibo.com/2617028971" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;2617028971" rel="noopener external nofollow noreferrer" target="_blank"><i class="weibo fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="twitter fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.facebook.com/yourname" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+        <a href="https://www.facebook.com/yourname" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="facebook fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="instagram fa-fw"></i></a>
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
@@ -651,8 +671,7 @@ for (var i = 0; i < firstpages.length; i++) {
 
 
   <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
       Links
     </div>
     <ul class="links-of-blogroll-list">
@@ -676,15 +695,23 @@ for (var i = 0; i < firstpages.length; i++) {
        
         
           <li>
-            <a href="/2020/03/03/" title="Github Flavored Markdown Demo" target="_blank">Github Flavored Markdown Demo</a>
+            <a href="/2020/RDPWrap_fix/" title="RDPWrap，Windows 多用户远程连接补丁" target="_blank">RDPWrap，Windows 多用户远程连接补丁</a>
           </li>
         
           <li>
-            <a href="/2020/03/01/" title="hello hexo" target="_blank">hello hexo</a>
+            <a href="/2020/Handwriting/" title="造假记：手写字迹仿真" target="_blank">造假记：手写字迹仿真</a>
           </li>
         
           <li>
-            <a href="/2010/04/01/" title="Hello World" target="_blank">Hello World</a>
+            <a href="/2020/Ranger/" title="Ranger，命令行 UI 化的文件管理器" target="_blank">Ranger，命令行 UI 化的文件管理器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/Scoop/" title="Scoop，一款Windows的包管理器" target="_blank">Scoop，一款Windows的包管理器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/Ranger/" title="antigen，Zsh 的包管理器" target="_blank">antigen，Zsh 的包管理器</a>
           </li>
         
       </ul>
@@ -990,6 +1017,8 @@ if(canvas.getContext){
     <footer class="footer">
       <div class="footer-inner">
         
+
+        
   <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener external nofollow noreferrer" target="_blank">粤ICP备17129576号-1 </a>
   </div>
 
@@ -1003,23 +1032,22 @@ if(canvas.getContext){
   <span class="author" itemprop="copyrightHolder">Liaozhebin</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">15k</span>
+    <span title="站点总字数">50k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">27 分钟</span>
+    <span title="站点阅读时长">46 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> 强力驱动 v4.2.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Pisces</a> v7.7.2
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
   <div class="addthis_inline_share_toolbox">
     <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e5bf6d4848b31d5" async="async"></script>
-  </div><div class="translate-style">
+  </div><!--繁体简体切换-->
+// 繁体简体切换
+<div class="translate-style">
 繁/简：<a id="translateLink" href="javascript:translatePage();" rel="external nofollow noreferrer">繁体
 </a>
 </div>
@@ -1034,7 +1062,8 @@ var translateButtonId = "translateLink"; //默认互换id
 translateInitilization();
 </script>
 
-
+//网站运行时间
+<!--网站运行时间-->
 <div>
 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 <script>
@@ -1054,6 +1083,12 @@ translateInitilization();
 setInterval("createtime()",250);
 </script>
 </div>
+
+<!--Canvas Nest-->
+<!-- 由于无法关闭移动的端不显示该动画，故展示不采用footer中的方案
+<script color="255,51,51" opacity="0.55" zIndex="-1" count="300" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+--!>
+
         
 
 
@@ -1068,9 +1103,9 @@ setInterval("createtime()",250);
   </div>
 
   
-  <script color='255,51,51' opacity='0.55' zIndex='-1' count='360' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest-nomobile.min.js"></script>
+  <script color='240,250,0' opacity='0.75' zIndex='-1' count='260' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest-nomobile.min.js"></script>
   <script size="320" alpha="0.51" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
@@ -1108,23 +1143,24 @@ setInterval("createtime()",250);
 
 
 <script>
-if (document.querySelectorAll('div.pdf').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
-    document.querySelectorAll('div.pdf').forEach(element => {
-      PDFObject.embed(element.getAttribute('target'), element, {
-        pdfOpenParams: {
-          navpanes : 0,
-          toolbar  : 0,
-          statusbar: 0,
-          pagemode : 'thumbs',
-          view     : 'FitH'
-        },
-        PDFJS_URL: '/lib/pdf/web/viewer.html',
-        height   : element.getAttribute('height') || '500px'
-      });
-    });
-  }, window.PDFObject);
-}
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
 </script>
 
 
@@ -1152,7 +1188,7 @@ if (document.querySelectorAll('pre.mermaid').length) {
       quicklink({
         timeout : 3000,
         priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri == 'http://yoursite.com/movies/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://592592.xyz/movies/',]
       });
       });
   </script>
@@ -1218,11 +1254,6 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
 <script type="text/javascript" src="/js/firework.js"></script> -->
 
-
-
-
-
-<script type="text/javascript" src="/js/fold_action.js"></script>
 
 
 
@@ -1329,19 +1360,3 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 </script>
 </body>
 </html>
-
-
-
-
-<!-- 以下已经移植到数据文件中：source/_data/body-end.swig -->
-
-<!-- 页面点击心形 -->
-<!-- <script type="text/javascript" src="/js/clicklove.js"></script> -->
-
-<!--崩溃欺骗-->
-<!-- <script type="text/javascript" src="/js/crash_cheat.js"></script> -->
-
-  <!-- 爆炸效果 -->
-<!-- <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
-<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
-<script type="text/javascript" src="/js/firework.js"></script> -->

@@ -15,21 +15,20 @@
 <link rel="stylesheet" href="/css/main.css">
 
 <link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Amita:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css">
   <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","width":280,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"592592.xyz","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":300,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
-
 
   <meta name="description" content="记录生活&amp;分享知识">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Bingo | zhrbin">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://592592.xyz/index.html">
 <meta property="og:site_name" content="Bingo | zhrbin">
 <meta property="og:description" content="记录生活&amp;分享知识">
 <meta property="og:locale" content="zh_CN">
@@ -39,7 +38,7 @@
 <meta property="article:tag" content="V2Ray">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="https://592592.xyz/">
 
 
 <script id="page-configurations">
@@ -47,14 +46,33 @@
   CONFIG.page = {
     sidebar: "",
     isHome : true,
-    isPost : false
+    isPost : false,
+    lang   : 'zh-CN'
   };
 </script>
 
   <title>Bingo | zhrbin</title>
   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165928363-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-165928363-1');
+      }
+    </script>
 
 
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9fb65a5a4370ac833060e18a9f952275";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -101,14 +119,12 @@
 
   <div class="site-meta">
 
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Bingo | zhrbin</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-        <p class="site-subtitle">随笔行舟,记录分享</p>
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bingo | zhrbin</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">随笔行舟,记录分享</p>
   </div>
 
   <div class="site-nav-right">
@@ -119,47 +135,48 @@
 </div>
 
 
+
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页 | Home</a>
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页 | Home</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于 | About</a>
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于 | About</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签 | Tags<span class="badge">3</span></a>
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签 | Tags<span class="badge">22</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类 | Categories<span class="badge">3</span></a>
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类 | Categories<span class="badge">20</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档 | Archives<span class="badge">3</span></a>
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档 | Archives<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-link">
 
-    <a href="/links" rel="section"><i class="fa fa-fw fa-link"></i>友情链接 | links</a>
+    <a href="/links" rel="section"><i class="link fa-fw"></i>友情链接 | links</a>
 
   </li>
         <li class="menu-item menu-item-movies">
 
-    <a href="/movies/" rel="section"><i class="fa fa-fw fa-film"></i>观影 | Movies</a>
+    <a href="/movies/" rel="section"><i class="film fa-fw"></i>观影 | Movies</a>
 
   </li>
         <li class="menu-item menu-item-books">
 
-    <a href="/books/" rel="section"><i class="fa fa-fw fa-book"></i>阅读 | books</a>
+    <a href="/books/" rel="section"><i class="book fa-fw"></i>阅读 | books</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -167,16 +184,18 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off"
            placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -184,12 +203,15 @@
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
-</div>
-<div class="search-pop-overlay"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
   </div>
+</div>
+
+    </div>
+  </div>
+
 </div>
     </header>
 
@@ -204,18 +226,16 @@
         <div class="content-wrap">
           
 
-          <div class="content">
+          <div class="content index posts-expand">
             
-
-  <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2010/04/01/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://592592.xyz/2020/RDPWrap_fix/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2019/12/02/54yfoBDxUtNvpRw.jpg">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
       <meta itemprop="name" content="Liaozhebin">
       <meta itemprop="description" content="记录生活&分享知识">
     </span>
@@ -224,30 +244,47 @@
       <meta itemprop="name" content="Bingo | zhrbin">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2010/04/01/" class="post-title-link" itemprop="url">Hello World</a>
-        </h1>
+            <a href="/2020/RDPWrap_fix/" class="post-title-link" itemprop="url">RDPWrap，Windows 多用户远程连接补丁</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2010-04-01 00:00:00" itemprop="dateCreated datePublished" datetime="2010-04-01T00:00:00+08:00">2010-04-01</time>
+              <time title="创建时间：2020-05-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-08T00:00:00+08:00">2020-05-08</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-05-01 00:00:00" itemprop="dateModified" datetime="2018-05-01T00:00:00+08:00">2018-05-01</time>
+                <time title="修改时间：2020-05-09 00:00:00" itemprop="dateModified" datetime="2020-05-09T00:00:00+08:00">2020-05-09</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/%E6%95%99%E7%A8%8B-Tutorial/" itemprop="url" rel="index"><span itemprop="name">教程/Tutorial</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/%E6%95%99%E7%A8%8B-Tutorial/%E7%AC%94%E8%AE%B0-Notes/" itemprop="url" rel="index"><span itemprop="name">笔记/Notes</span></a>
+                </span>
+            </span>
 
           
-            <span id="/2010/04/01/" class="post-meta-item leancloud_visitors" data-flag-title="Hello World" title="阅读次数">
+            <span id="/2020/RDPWrap_fix/" class="post-meta-item leancloud_visitors" data-flag-title="RDPWrap，Windows 多用户远程连接补丁" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -258,35 +295,30 @@
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2010/04/01/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2010/04/01/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/RDPWrap_fix/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/RDPWrap_fix/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-         
-         	<span class="post-meta-divider">|</span>
-            <i class="fa fa-thumb-tack"></i>
-            <font color="9D26CD">已置顶</font>
-            <span class="post-meta-divider">|</span>
-          <br>
+         <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
+                <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.6k</span>
+              <span>1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
+                <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>8 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -298,10 +330,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          🔐咦，这儿有东西被加密了，需要输入密码才能查看~
+          <h2 id="补丁作用：">补丁作用：</h2>
+<p>正常情况下 <strong>家庭版 Windows</strong> 是没有远程连接的功能的，而比家庭版更高级的 <strong>专业版/企业版</strong> 虽然有远程连接支持，但是相比于 <strong>Server 服务器版</strong> ，还是限制了只允许一个用户登录使用电脑,</p>
+<blockquote>
+<p>比如：名称 <code>B</code> 的用户远程连接进来你的电脑，本地使用着电脑的（你）<code>A</code> 用户必须退出登录，<code>B</code> 才可连接上。</p>
+</blockquote>
+<p>而这个补丁的作用就是让 <strong>非 Server 服务器版 Windows</strong>  能够拥有一个完整版的远程功能（支持多用户远程 <strong>同时</strong> 连接）</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2010/04/01/#more" rel="contents">
+              <a class="btn" href="/2020/RDPWrap_fix/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -321,14 +358,14 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://592592.xyz/2020/Handwriting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2019/12/02/54yfoBDxUtNvpRw.jpg">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
       <meta itemprop="name" content="Liaozhebin">
       <meta itemprop="description" content="记录生活&分享知识">
     </span>
@@ -337,43 +374,51 @@
       <meta itemprop="name" content="Bingo | zhrbin">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/03/" class="post-title-link" itemprop="url">Github Flavored Markdown Demo</a>
-        </h1>
+            <a href="/2020/Handwriting/" class="post-title-link" itemprop="url">造假记：手写字迹仿真</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-03-03 16:35:23" itemprop="dateCreated datePublished" datetime="2020-03-03T16:35:23+08:00">2020-03-03</time>
+              <time title="创建时间：2020-05-05 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-05T00:00:00+08:00">2020-05-05</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-10 20:42:06" itemprop="dateModified" datetime="2020-03-10T20:42:06+08:00">2020-03-10</time>
+                <time title="修改时间：2020-05-07 00:00:00" itemprop="dateModified" datetime="2020-05-07T00:00:00+08:00">2020-05-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/cate/" itemprop="url" rel="index"><span itemprop="name">cate</span></a>
+                  <a href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">生活记录</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/cate/cate2/" itemprop="url" rel="index"><span itemprop="name">cate2</span></a>
+                  <a href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/Windows/%E6%95%99%E7%A8%8B-Tutorial/" itemprop="url" rel="index"><span itemprop="name">教程/Tutorial</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E5%BD%95/Windows/%E6%95%99%E7%A8%8B-Tutorial/%E6%96%B0%E6%8A%80%E8%83%BD/" itemprop="url" rel="index"><span itemprop="name">新技能</span></a>
                 </span>
             </span>
 
           
-            <span id="/2020/03/03/" class="post-meta-item leancloud_visitors" data-flag-title="Github Flavored Markdown Demo" title="阅读次数">
+            <span id="/2020/Handwriting/" class="post-meta-item leancloud_visitors" data-flag-title="造假记：手写字迹仿真" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -384,12 +429,12 @@
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/03/03/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/03/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/Handwriting/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/Handwriting/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -397,17 +442,909 @@
          <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
+                <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>8.1k</span>
+              <span>6.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
+                <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>15 分钟</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="引">引</h2>
+<p>奈何 <strong>2020</strong> 年了，全中国都脱贫了，我竟然还在大学本科遇到了以 <strong>抄写</strong> 课文为教学方针语言老师。</p>
+<p>以 <strong>自愿</strong> 为前提的抄写对学习的帮助个人是认同的，也曾从中受益过。</p>
+<p>而全盘一致的任务性抄写我是反感的，不吃这一套的我，寻思着这教学方针对我没用啊，甚至于 <code>抄写=浪费时间</code> 。</p>
+<blockquote>
+<p>换在之前的学校我很有可能就不理会（不交了），可这里是本科，能拿的绩点还是得尽量拿一下呀。要是不交的话这种老师势必记仇最后影响到绩点。</p>
+</blockquote>
+<p>没办法，于是奔着抄写不如学习新技能的心态，开始在网上寻找 <code>字迹仿真</code> 解决方案。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/Handwriting/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://592592.xyz/2020/Ranger/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
+      <meta itemprop="name" content="Liaozhebin">
+      <meta itemprop="description" content="记录生活&分享知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bingo | zhrbin">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/Ranger/" class="post-title-link" itemprop="url">Ranger，命令行 UI 化的文件管理器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-03 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-03T00:00:00+08:00">2020-05-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-06 00:00:00" itemprop="dateModified" datetime="2020-05-06T00:00:00+08:00">2020-05-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/" itemprop="url" rel="index"><span itemprop="name">Shell</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/%E6%95%99%E7%A8%8B-Tutorial/" itemprop="url" rel="index"><span itemprop="name">教程/Tutorial</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/%E6%95%99%E7%A8%8B-Tutorial/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/Ranger/" class="post-meta-item leancloud_visitors" data-flag-title="Ranger，命令行 UI 化的文件管理器" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/Ranger/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/Ranger/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+         <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>README</strong><br>
+本文介绍 <code>Ranger</code> ，它是一个非常实用且具有 <code>VI/VIM快捷键</code> 风格的控制台文件管理器，让熟悉 <code>vim</code> 的你可以快速上手。它提供了一个简约而美观的界面，并具有目录层次结构的视图</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/Ranger/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://592592.xyz/2020/Scoop/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
+      <meta itemprop="name" content="Liaozhebin">
+      <meta itemprop="description" content="记录生活&分享知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bingo | zhrbin">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/Scoop/" class="post-title-link" itemprop="url">Scoop，一款Windows的包管理器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-02 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-02T00:00:00+08:00">2020-05-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-04 00:00:00" itemprop="dateModified" datetime="2020-05-04T00:00:00+08:00">2020-05-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/" itemprop="url" rel="index"><span itemprop="name">Shell</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Windows/%E6%95%99%E7%A8%8B-Tutorial/" itemprop="url" rel="index"><span itemprop="name">教程/Tutorial</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Windows/%E6%95%99%E7%A8%8B-Tutorial/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">包管理器</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/Scoop/" class="post-meta-item leancloud_visitors" data-flag-title="Scoop，一款Windows的包管理器" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/Scoop/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/Scoop/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+         <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>9.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>README</strong><br>
+本文介绍 <code>Scoop</code> 的安装与使用，Scoop 是一款 Windows 下的软件包管理器，类似于Linux下的<code>apt / yum / dnf</code>，通过命令可以很方便的安装你想到的软件到指定路径。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/Scoop/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://592592.xyz/2020/Ranger/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
+      <meta itemprop="name" content="Liaozhebin">
+      <meta itemprop="description" content="记录生活&分享知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bingo | zhrbin">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/Ranger/" class="post-title-link" itemprop="url">antigen，Zsh 的包管理器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-01 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-01T00:00:00+08:00">2020-05-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-03 00:00:00" itemprop="dateModified" datetime="2020-05-03T00:00:00+08:00">2020-05-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/" itemprop="url" rel="index"><span itemprop="name">Shell</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Linux/%E6%95%99%E7%A8%8B-Tutorial/" itemprop="url" rel="index"><span itemprop="name">教程/Tutorial</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Linux/%E6%95%99%E7%A8%8B-Tutorial/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">包管理器</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/Ranger/" class="post-meta-item leancloud_visitors" data-flag-title="antigen，Zsh 的包管理器" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/Ranger/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/Ranger/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+         <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>Readme</strong></p>
+<p>觉得前面的 <code>zsh</code> 安装太复杂？ 试试它的包管理器 <code>antigen</code> 吧，一个能够让你 <strong>更快更轻松</strong> 部署好用 <code>Shell</code> 环境的工具。</p>
+<p><a href="https://github.com/zsh-users/antigen" target="_blank" rel="noopener external nofollow noreferrer">Github 项目主页</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/Ranger/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://592592.xyz/2020/fish/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
+      <meta itemprop="name" content="Liaozhebin">
+      <meta itemprop="description" content="记录生活&分享知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bingo | zhrbin">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/fish/" class="post-title-link" itemprop="url">Fish，真正开箱即用的 Linux Shell 终端</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-28 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-28T00:00:00+08:00">2020-04-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-30 00:00:00" itemprop="dateModified" datetime="2020-04-30T00:00:00+08:00">2020-04-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/" itemprop="url" rel="index"><span itemprop="name">Shell</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Linux/%E6%95%99%E7%A8%8B-Tutorial/" itemprop="url" rel="index"><span itemprop="name">教程/Tutorial</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/fish/" class="post-meta-item leancloud_visitors" data-flag-title="Fish，真正开箱即用的 Linux Shell 终端" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/fish/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/fish/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+         <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>Readme</strong></p>
+<p>看了之前 <code>zsh</code> 的配置教程有些萌萌新可能会觉得有点复杂而头大，简单学习完 zsh 之后发现一款真正 <strong>开箱即用</strong> 的终端 <strong><code>Fish</code></strong> ，它可以通过包管理器 <code>apt / yum / dnf</code> 一键安装，并在不需要任何配置的情况下，达到比传统的 <code>Bash</code> 更好用的状态</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/fish/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://592592.xyz/2020/Zsh_and_oh-my-zsh/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
+      <meta itemprop="name" content="Liaozhebin">
+      <meta itemprop="description" content="记录生活&分享知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bingo | zhrbin">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/Zsh_and_oh-my-zsh/" class="post-title-link" itemprop="url">Zsh，一款现代化的 Linux Shell 终端</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-26 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-26T00:00:00+08:00">2020-04-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-03 00:00:00" itemprop="dateModified" datetime="2020-05-03T00:00:00+08:00">2020-05-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/" itemprop="url" rel="index"><span itemprop="name">Shell</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Linux/%E6%95%99%E7%A8%8B-Tutorial/" itemprop="url" rel="index"><span itemprop="name">教程/Tutorial</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/Zsh_and_oh-my-zsh/" class="post-meta-item leancloud_visitors" data-flag-title="Zsh，一款现代化的 Linux Shell 终端" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/Zsh_and_oh-my-zsh/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/Zsh_and_oh-my-zsh/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+         <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>README</strong><br>
+本文介绍了 <code>Zsh</code>是什么，与传统的bash有什么不同，如何安装并使用，<code>Shell</code>的概念，以及zsh的配置集<code>oh-my-zsh</code>的主题与插件的使用。<br>
+<code>zsh</code> 是一款 <strong>成熟稳定，现代化</strong>的 shell，兼容于传统的 bash  sh 的同时，比它们拥有更强大的功能。以至于苹果系统已将 zsh 取代 bash 作为系统默认的 <code>shell</code> 了<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>.<br>
+<code>oh-my-zsh</code>集成了 zsh 的 配置文件、主题 Themes、插件 Options，使任何人可以轻松的配置出一个 <strong>beautiful &amp; friendly</strong> 的 zsh，来提高生产效率。包括更智能的色彩高亮，历史目录快速跳转，kill 进程名按 tab 键 自动转 PID 等自动补齐功能。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/Zsh_and_oh-my-zsh/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://592592.xyz/2020/Cmder/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
+      <meta itemprop="name" content="Liaozhebin">
+      <meta itemprop="description" content="记录生活&分享知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bingo | zhrbin">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/Cmder/" class="post-title-link" itemprop="url">Cmder，一款增强版的 Windows 命令行</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-20 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-20T00:00:00+08:00">2020-04-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-23 00:00:00" itemprop="dateModified" datetime="2020-04-23T00:00:00+08:00">2020-04-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/" itemprop="url" rel="index"><span itemprop="name">Shell</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/Windows/%E6%95%99%E7%A8%8B-Tutorial/" itemprop="url" rel="index"><span itemprop="name">教程/Tutorial</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/Cmder/" class="post-meta-item leancloud_visitors" data-flag-title="Cmder，一款增强版的 Windows 命令行" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/Cmder/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/Cmder/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+         <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>README</strong><br>
+本文介绍 <code>Cmder</code> 的安装与使用。<br>
+<code>cmder</code> 是一个增强型命令行工具，不仅可以使用 <code>windows</code> 下的所有命令，更爽的是可以使用 <code>linux</code> 的shell命令。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/Cmder/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://592592.xyz/2020/Github_Flavored_Markdown/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
+      <meta itemprop="name" content="Liaozhebin">
+      <meta itemprop="description" content="记录生活&分享知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bingo | zhrbin">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/Github_Flavored_Markdown/" class="post-title-link" itemprop="url">Github Flavored Markdown</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-08 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-08T00:00:00+08:00">2020-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-03 00:00:00" itemprop="dateModified" datetime="2020-05-03T00:00:00+08:00">2020-05-03</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Demo-%E6%BC%94%E7%A4%BA/" itemprop="url" rel="index"><span itemprop="name">Demo 演示</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/Github_Flavored_Markdown/" class="post-meta-item leancloud_visitors" data-flag-title="Github Flavored Markdown" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/Github_Flavored_Markdown/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/Github_Flavored_Markdown/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+         <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>8.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
             </span>
 
         </div>
@@ -423,7 +1360,7 @@
 该文件用来测试和展示书写编写博客时需要用到的各种markdown语法。GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之为<code>GitHub Flavored Markdown</code>。简称<code>GFM</code>，GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/03/03/#more" rel="contents">
+              <a class="btn" href="/2020/Github_Flavored_Markdown/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -443,14 +1380,14 @@
   
   
 
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/01/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://592592.xyz/2020/BreakWall_V2Ray_User_Guide/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2019/12/02/54yfoBDxUtNvpRw.jpg">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
       <meta itemprop="name" content="Liaozhebin">
       <meta itemprop="description" content="记录生活&分享知识">
     </span>
@@ -459,43 +1396,47 @@
       <meta itemprop="name" content="Bingo | zhrbin">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/01/" class="post-title-link" itemprop="url">hello hexo</a>
-        </h1>
+            <a href="/2020/BreakWall_V2Ray_User_Guide/" class="post-title-link" itemprop="url">墙爆指南，V2Ray 客户端使用说明</a>
+        </h2>
 
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-03-01 18:04:46" itemprop="dateCreated datePublished" datetime="2020-03-01T18:04:46+08:00">2020-03-01</time>
+              <time title="创建时间：2020-02-02 00:00:00" itemprop="dateCreated datePublished" datetime="2020-02-02T00:00:00+08:00">2020-02-02</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-03 21:50:23" itemprop="dateModified" datetime="2020-03-03T21:50:23+08:00">2020-03-03</time>
+                <time title="修改时间：2020-05-03 00:00:00" itemprop="dateModified" datetime="2020-05-03T00:00:00+08:00">2020-05-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/cate/" itemprop="url" rel="index"><span itemprop="name">cate</span></a>
+                  <a href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" itemprop="url" rel="index"><span itemprop="name">科学上网</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/cate/democate/" itemprop="url" rel="index"><span itemprop="name">democate</span></a>
+                  <a href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/V2Ray/" itemprop="url" rel="index"><span itemprop="name">V2Ray</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/V2Ray/%E6%95%99%E7%A8%8B-Tutorial/" itemprop="url" rel="index"><span itemprop="name">教程/Tutorial</span></a>
                 </span>
             </span>
 
           
-            <span id="/2020/03/01/" class="post-meta-item leancloud_visitors" data-flag-title="hello hexo" title="阅读次数">
+            <span id="/2020/BreakWall_V2Ray_User_Guide/" class="post-meta-item leancloud_visitors" data-flag-title="墙爆指南，V2Ray 客户端使用说明" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -506,12 +1447,12 @@
   <span class="post-meta-item">
     
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-comment"></i>
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/03/01/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/01/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/BreakWall_V2Ray_User_Guide/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/BreakWall_V2Ray_User_Guide/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -519,17 +1460,17 @@
          <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
+                <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
+                <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -541,12 +1482,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><strong>==这里是目录，可以快速跳转==</strong></p>
-<p>[TOC]</p>
-<!-- toc -->
+          <p><strong>README</strong><br>
+本文介绍如何在 Android、IOS、PC 客户端中使用 <strong>V2Ray</strong> ,包含： 如何使用<code>Vmess</code>链接导入节点，如何完成基础设置并开始使用。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2020/03/01/#more" rel="contents">
+              <a class="btn" href="/2020/BreakWall_V2Ray_User_Guide/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -566,9 +1506,11 @@
   
   
 
-  </div>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -577,7 +1519,7 @@
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -626,7 +1568,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Liaozhebin"
-      src="https://i.loli.net/2019/12/02/54yfoBDxUtNvpRw.jpg">
+      src="https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/20200508222446.png">
   <p class="site-author-name" itemprop="name">Liaozhebin</p>
   <div class="site-description" itemprop="description">记录生活&分享知识</div>
 </div>
@@ -635,20 +1577,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -659,22 +1601,22 @@
   </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/liaozhebin" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liaozhebin" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+        <a href="https://github.com/liaozhebin" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;liaozhebin" rel="noopener external nofollow noreferrer" target="_blank"><i class="github fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="mailto:liaozhebin@gmail.com" title="E-Mail → mailto:liaozhebin@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+        <a href="mailto:liaozhebin@gmail.com" title="E-Mail → mailto:liaozhebin@gmail.com" rel="noopener external nofollow noreferrer" target="_blank"><i class="envelope fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://weibo.com/2617028971" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;2617028971" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-weibo"></i></a>
+        <a href="https://weibo.com/2617028971" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;2617028971" rel="noopener external nofollow noreferrer" target="_blank"><i class="weibo fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="twitter fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.facebook.com/yourname" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-facebook"></i></a>
+        <a href="https://www.facebook.com/yourname" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="facebook fa-fw"></i></a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+        <a href="https://instagram.com/yourname" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yourname" rel="noopener external nofollow noreferrer" target="_blank"><i class="instagram fa-fw"></i></a>
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
@@ -683,8 +1625,7 @@
 
 
   <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
       Links
     </div>
     <ul class="links-of-blogroll-list">
@@ -708,15 +1649,23 @@
        
         
           <li>
-            <a href="/2020/03/03/" title="Github Flavored Markdown Demo" target="_blank">Github Flavored Markdown Demo</a>
+            <a href="/2020/RDPWrap_fix/" title="RDPWrap，Windows 多用户远程连接补丁" target="_blank">RDPWrap，Windows 多用户远程连接补丁</a>
           </li>
         
           <li>
-            <a href="/2020/03/01/" title="hello hexo" target="_blank">hello hexo</a>
+            <a href="/2020/Handwriting/" title="造假记：手写字迹仿真" target="_blank">造假记：手写字迹仿真</a>
           </li>
         
           <li>
-            <a href="/2010/04/01/" title="Hello World" target="_blank">Hello World</a>
+            <a href="/2020/Ranger/" title="Ranger，命令行 UI 化的文件管理器" target="_blank">Ranger，命令行 UI 化的文件管理器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/Scoop/" title="Scoop，一款Windows的包管理器" target="_blank">Scoop，一款Windows的包管理器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/Ranger/" title="antigen，Zsh 的包管理器" target="_blank">antigen，Zsh 的包管理器</a>
           </li>
         
       </ul>
@@ -1022,6 +1971,8 @@ if(canvas.getContext){
     <footer class="footer">
       <div class="footer-inner">
         
+
+        
   <div class="beian"><a href="http://www.beian.miit.gov.cn/" rel="noopener external nofollow noreferrer" target="_blank">粤ICP备17129576号-1 </a>
   </div>
 
@@ -1035,23 +1986,22 @@ if(canvas.getContext){
   <span class="author" itemprop="copyrightHolder">Liaozhebin</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">15k</span>
+    <span title="站点总字数">50k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">27 分钟</span>
+    <span title="站点阅读时长">46 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> 强力驱动 v4.2.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Pisces</a> v7.7.2
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
   <div class="addthis_inline_share_toolbox">
     <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e5bf6d4848b31d5" async="async"></script>
-  </div><div class="translate-style">
+  </div><!--繁体简体切换-->
+// 繁体简体切换
+<div class="translate-style">
 繁/简：<a id="translateLink" href="javascript:translatePage();" rel="external nofollow noreferrer">繁体
 </a>
 </div>
@@ -1066,7 +2016,8 @@ var translateButtonId = "translateLink"; //默认互换id
 translateInitilization();
 </script>
 
-
+//网站运行时间
+<!--网站运行时间-->
 <div>
 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 <script>
@@ -1086,6 +2037,12 @@ translateInitilization();
 setInterval("createtime()",250);
 </script>
 </div>
+
+<!--Canvas Nest-->
+<!-- 由于无法关闭移动的端不显示该动画，故展示不采用footer中的方案
+<script color="255,51,51" opacity="0.55" zIndex="-1" count="300" src="https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js"></script>
+--!>
+
         
 
 
@@ -1100,9 +2057,9 @@ setInterval("createtime()",250);
   </div>
 
   
-  <script color='255,51,51' opacity='0.55' zIndex='-1' count='360' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest-nomobile.min.js"></script>
+  <script color='240,250,0' opacity='0.75' zIndex='-1' count='260' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest-nomobile.min.js"></script>
   <script size="320" alpha="0.51" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
-  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
@@ -1140,23 +2097,24 @@ setInterval("createtime()",250);
 
 
 <script>
-if (document.querySelectorAll('div.pdf').length) {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js', () => {
-    document.querySelectorAll('div.pdf').forEach(element => {
-      PDFObject.embed(element.getAttribute('target'), element, {
-        pdfOpenParams: {
-          navpanes : 0,
-          toolbar  : 0,
-          statusbar: 0,
-          pagemode : 'thumbs',
-          view     : 'FitH'
-        },
-        PDFJS_URL: '/lib/pdf/web/viewer.html',
-        height   : element.getAttribute('height') || '500px'
-      });
-    });
-  }, window.PDFObject);
-}
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
 </script>
 
 
@@ -1178,16 +2136,6 @@ if (document.querySelectorAll('pre.mermaid').length) {
   
 
   
-  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
-  <script>
-      window.addEventListener('load', () => {
-      quicklink({
-        timeout : 3000,
-        priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri == 'http://yoursite.com/',]
-      });
-      });
-  </script>
 
 
 
@@ -1250,11 +2198,6 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
 <script type="text/javascript" src="/js/firework.js"></script> -->
 
-
-
-
-
-<script type="text/javascript" src="/js/fold_action.js"></script>
 
 
 
@@ -1361,19 +2304,3 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
 </script>
 </body>
 </html>
-
-
-
-
-<!-- 以下已经移植到数据文件中：source/_data/body-end.swig -->
-
-<!-- 页面点击心形 -->
-<!-- <script type="text/javascript" src="/js/clicklove.js"></script> -->
-
-<!--崩溃欺骗-->
-<!-- <script type="text/javascript" src="/js/crash_cheat.js"></script> -->
-
-  <!-- 爆炸效果 -->
-<!-- <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
-<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
-<script type="text/javascript" src="/js/firework.js"></script> -->

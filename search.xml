@@ -1129,8 +1129,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Shell</tag>
         <tag>Windows</tag>
+        <tag>Shell</tag>
         <tag>Ranger</tag>
       </tags>
   </entry>
@@ -1341,8 +1341,8 @@ Portable 便携式软件默认安装到 chocolatey 目录<br>
         <category>包管理器</category>
       </categories>
       <tags>
-        <tag>Shell</tag>
         <tag>Windows</tag>
+        <tag>Shell</tag>
         <tag>Scoop</tag>
       </tags>
   </entry>
@@ -2090,8 +2090,8 @@ Portable 便携式软件默认安装到 chocolatey 目录<br>
         <category>教程/Tutorial</category>
       </categories>
       <tags>
-        <tag>Shell</tag>
         <tag>Windows</tag>
+        <tag>Shell</tag>
         <tag>Cmder</tag>
       </tags>
   </entry>
@@ -2738,8 +2738,8 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
         <category>Demo 演示</category>
       </categories>
       <tags>
-        <tag>Demo 演示</tag>
         <tag>Markdown</tag>
+        <tag>Demo 演示</tag>
       </tags>
   </entry>
   <entry>
@@ -2979,8 +2979,8 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
         <category>Demo 演示</category>
       </categories>
       <tags>
-        <tag>Hello World</tag>
         <tag>Demo 演示</tag>
+        <tag>Hello World</tag>
       </tags>
   </entry>
 </search>

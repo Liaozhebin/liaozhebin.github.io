@@ -108,9 +108,9 @@
       <category term="Linux" scheme="https://592592.xyz/categories/Shell/%E6%95%99%E7%A8%8B-Tutorial/Linux/"/>
     
     
-      <category term="Shell" scheme="https://592592.xyz/tags/Shell/"/>
-    
       <category term="Windows" scheme="https://592592.xyz/tags/Windows/"/>
+    
+      <category term="Shell" scheme="https://592592.xyz/tags/Shell/"/>
     
       <category term="Ranger" scheme="https://592592.xyz/tags/Ranger/"/>
     
@@ -140,9 +140,9 @@
       <category term="包管理器" scheme="https://592592.xyz/categories/Shell/Windows/%E6%95%99%E7%A8%8B-Tutorial/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/"/>
     
     
-      <category term="Shell" scheme="https://592592.xyz/tags/Shell/"/>
-    
       <category term="Windows" scheme="https://592592.xyz/tags/Windows/"/>
+    
+      <category term="Shell" scheme="https://592592.xyz/tags/Shell/"/>
     
       <category term="Scoop" scheme="https://592592.xyz/tags/Scoop/"/>
     
@@ -276,9 +276,9 @@
       <category term="教程/Tutorial" scheme="https://592592.xyz/categories/Shell/Windows/%E6%95%99%E7%A8%8B-Tutorial/"/>
     
     
-      <category term="Shell" scheme="https://592592.xyz/tags/Shell/"/>
-    
       <category term="Windows" scheme="https://592592.xyz/tags/Windows/"/>
+    
+      <category term="Shell" scheme="https://592592.xyz/tags/Shell/"/>
     
       <category term="Cmder" scheme="https://592592.xyz/tags/Cmder/"/>
     
@@ -302,9 +302,9 @@
       <category term="Demo 演示" scheme="https://592592.xyz/categories/Demo-%E6%BC%94%E7%A4%BA/"/>
     
     
-      <category term="Demo 演示" scheme="https://592592.xyz/tags/Demo-%E6%BC%94%E7%A4%BA/"/>
-    
       <category term="Markdown" scheme="https://592592.xyz/tags/Markdown/"/>
+    
+      <category term="Demo 演示" scheme="https://592592.xyz/tags/Demo-%E6%BC%94%E7%A4%BA/"/>
     
   </entry>
   
@@ -355,9 +355,9 @@
       <category term="Demo 演示" scheme="https://592592.xyz/categories/Demo-%E6%BC%94%E7%A4%BA/"/>
     
     
-      <category term="Hello World" scheme="https://592592.xyz/tags/Hello-World/"/>
-    
       <category term="Demo 演示" scheme="https://592592.xyz/tags/Demo-%E6%BC%94%E7%A4%BA/"/>
+    
+      <category term="Hello World" scheme="https://592592.xyz/tags/Hello-World/"/>
     
   </entry>
   

@@ -10,7 +10,7 @@
   <id>https://592592.xyz/</id>
   
   <author>
-    <name>Liaozhebin</name>
+    <name>Zhrbin</name>
     
   </author>
   
@@ -302,9 +302,9 @@
       <category term="Demo 演示" scheme="https://592592.xyz/categories/Demo-%E6%BC%94%E7%A4%BA/"/>
     
     
-      <category term="Markdown" scheme="https://592592.xyz/tags/Markdown/"/>
-    
       <category term="Demo 演示" scheme="https://592592.xyz/tags/Demo-%E6%BC%94%E7%A4%BA/"/>
+    
+      <category term="Markdown" scheme="https://592592.xyz/tags/Markdown/"/>
     
   </entry>
   
@@ -355,9 +355,9 @@
       <category term="Demo 演示" scheme="https://592592.xyz/categories/Demo-%E6%BC%94%E7%A4%BA/"/>
     
     
-      <category term="Demo 演示" scheme="https://592592.xyz/tags/Demo-%E6%BC%94%E7%A4%BA/"/>
-    
       <category term="Hello World" scheme="https://592592.xyz/tags/Hello-World/"/>
+    
+      <category term="Demo 演示" scheme="https://592592.xyz/tags/Demo-%E6%BC%94%E7%A4%BA/"/>
     
   </entry>
   

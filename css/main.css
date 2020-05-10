@@ -1382,13 +1382,10 @@ pre .javascript .function {
   margin-bottom: 10px;
   margin-right: 10px;
   vertical-align: middle;
-  transition-delay: 0s;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #288255;
+  background: #cd42fc;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2237,6 +2234,44 @@ pre .javascript .function {
   margin: 2em 0 0;
   padding: 0.5em 1em;
 }
+.followme {
+  align-items: center;
+  background: var(--card-bg-color);
+  border-left: 3px solid #ff2a2a;
+  color: #bbb;
+  margin: 2em 0 1em 0;
+  padding: 1em 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.followme .social-list {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.followme .social-list .social-item {
+  margin: 0.5em 2em;
+}
+@media (max-width: 991px) {
+  .followme .social-list .social-item {
+    margin: 0.5em 0.75em;
+  }
+}
+.followme .social-list .social-link {
+  border: 0;
+  display: inline-block;
+  text-align: center;
+}
+.followme .social-list .social-link .icon {
+  font-size: 1.75em;
+  height: 1.75em;
+  width: 1.75em;
+}
+.followme .social-list .social-link .label {
+  display: block;
+  font-size: 14px;
+}
 .category-all-page .category-all-title {
   text-align: center;
 }
@@ -2784,6 +2819,7 @@ ul.breadcrumb li + li:last-child {
 }
 .links-of-author-item {
   margin: 5px 0 0;
+  width: 50%;
 }
 .links-of-author-item a,
 .links-of-author-item span.exturl {
@@ -2822,6 +2858,7 @@ ul.breadcrumb li + li:last-child {
   padding: 0;
   display: inline-block;
   margin: 5px 0 0;
+  width: unset;
 }
 .links-of-blogroll-item a,
 .links-of-blogroll-item span.exturl {
@@ -2893,8 +2930,8 @@ body {
 code {
   color: #e74856;
   background: #faf0f0;
-  margin: 1px;
-  font-weight: 600;
+  margin: 0px;
+  font-weight: 500;
 }
 .highlight,
 pre {
@@ -2906,16 +2943,6 @@ pre {
 code,
 pre {
   border: 1px solid #d6d6d6;
-}
-.hider_title {
-  cursor: pointer;
-  color: #ef4a05;
-}
-.close:before {
-  content: "▼";
-}
-.open:before {
-  content: "▲";
 }
 .site-overview {
   text-align: center;

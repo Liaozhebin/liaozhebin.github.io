@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://592592.xyz/"/>
-  <updated>2020-05-08T16:00:00.000Z</updated>
+  <updated>2020-05-16T16:00:00.000Z</updated>
   <id>https://592592.xyz/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IC卡之权限管理</title>
+    <link href="https://592592.xyz/2020/RFID_IC_Authority_Management/"/>
+    <id>https://592592.xyz/2020/RFID_IC_Authority_Management/</id>
+    <published>2020-05-15T16:00:00.000Z</published>
+    <updated>2020-05-16T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;基本概念&quot;&gt;基本概念&lt;/h2&gt;
+&lt;h3 id=&quot;扇区：&quot;&gt;扇区：&lt;/h3&gt;
+&lt;p&gt;1KB-M1 卡共有 16 个扇区 64 个块，每个扇区由 4 块（块 0、块 1、块 2、块 3）组成。通常会按绝对地址编号： 0~15扇区，0-63块。如下图所示：&lt;br&gt;
+&lt;img src=&quot;https://cdn.jsdelivr.net/gh/liaozhebin/img@master/imgs/Snipaste_2020-05-16_17-11-18.webp&quot; alt=&quot;扇区示意图&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术日志" scheme="https://592592.xyz/categories/%E6%8A%80%E6%9C%AF%E6%97%A5%E5%BF%97/"/>
+    
+      <category term="RFID" scheme="https://592592.xyz/categories/%E6%8A%80%E6%9C%AF%E6%97%A5%E5%BF%97/RFID/"/>
+    
+    
+      <category term="RFID" scheme="https://592592.xyz/tags/RFID/"/>
+    
+      <category term="IC卡" scheme="https://592592.xyz/tags/IC%E5%8D%A1/"/>
+    
+      <category term="技术日志" scheme="https://592592.xyz/tags/%E6%8A%80%E6%9C%AF%E6%97%A5%E5%BF%97/"/>
+    
+  </entry>
   
   <entry>
     <title>RDPWrap，Windows 多用户远程连接补丁</title>

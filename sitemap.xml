@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://592592.xyz/2020/Ranger/</loc>
+    
+    <lastmod>2020-05-17T16:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://592592.xyz/2020/Zsh_and_oh-my-zsh/</loc>
+    
+    <lastmod>2020-05-17T16:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://592592.xyz/2020/RFID_IC_Authority_Management/</loc>
     
     <lastmod>2020-05-16T16:00:00.000Z</lastmod>
@@ -40,20 +54,6 @@
     <loc>https://592592.xyz/2020/Scoop/</loc>
     
     <lastmod>2020-05-03T16:00:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://592592.xyz/2020/Ranger/</loc>
-    
-    <lastmod>2020-05-02T16:00:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://592592.xyz/2020/Zsh_and_oh-my-zsh/</loc>
-    
-    <lastmod>2020-05-02T16:00:00.000Z</lastmod>
     
   </url>
   

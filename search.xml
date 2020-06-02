@@ -1587,7 +1587,8 @@ Portable 便携式软件默认安装到 chocolatey 目录<br>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop install vscode</span><br><span class="line">scoop install sublime<span class="literal">-text</span></span><br><span class="line">scoop install notepadplusplus</span><br></pre></td></tr></table></figure>
 <h5 id="Markdown-编辑器-Typora">Markdown 编辑器 - Typora</h5>
 <p><a href="https://typora.io/" target="_blank" rel="noopener external nofollow noreferrer">typora</a> <a href="https://mermaidjs.github.io/" target="_blank" rel="noopener external nofollow noreferrer">mermaid</a></p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop install typora</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/jgm/pandoc/releases/tag/2.9.2.1" target="_blank" rel="noopener external nofollow noreferrer">pandoc</a> typora 导出的扩展插件</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop install typora pandoc</span><br></pre></td></tr></table></figure>
 <h5 id="PDF">PDF</h5>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop install sumatrapdf</span><br></pre></td></tr></table></figure>
 <h5 id="卸载工具-Geek-uninstaller">卸载工具 - Geek uninstaller</h5>
@@ -3072,6 +3073,7 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 <ul>
 <li><a href="#%E7%AD%89%E7%BA%A7%E5%88%92%E5%88%86">等级划分</a></li>
 <li><a href="#%E8%BF%90%E8%90%A5%E5%95%86%E6%A0%87%E8%AF%86">运营商标识</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%97%B6%E9%97%B4%E6%AE%B5">使用时间段</a></li>
 <li><a href="#%E8%8A%82%E7%82%B9%E5%90%8D%E7%A7%B0%E6%A0%87%E8%AF%86%E5%90%AB%E4%B9%89">节点名称标识含义</a></li>
 </ul>
 </li>
@@ -3181,7 +3183,9 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 <li>频繁切换节点会导致上一个节点再也无法连接上，需要关闭客户端重新打开，甚至重启电脑</li>
 </ul>
 <h2 id="如何选择合适的节点">如何选择合适的节点</h2>
-<h3 id="等级划分">等级划分</h3>
+<h3 id="一句话概括：">一句话概括：</h3>
+<p><strong>网络里有很多复杂的情况</strong>，具体还得自己试了才知道，以下部分只起基础的引导作用。</p>
+<h4 id="等级划分">等级划分</h4>
 <ul>
 <li>
 <p><strong>S &gt; A+ &gt; A &gt; A- &gt; B+ &gt; B &gt; B- &gt; C+ &gt; C</strong></p>
@@ -3190,11 +3194,17 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 </blockquote>
 </li>
 </ul>
-<h3 id="运营商标识">运营商标识</h3>
+<h4 id="运营商标识">运营商标识</h4>
 <ul>
 <li>[电] = 电信；[移] = 移动；[联] = 联通</li>
 </ul>
-<h3 id="节点名称标识含义">节点名称标识含义</h3>
+<h4 id="使用时间段">使用时间段</h4>
+<ul>
+<li>不同使用时间段，节点的体验会大不相同</li>
+<li>国内一般上网的高峰期是晚上，适合使用高级节点以获取更好的稳定性</li>
+<li>凌晨和上午属于上网的低谷，使用一些普通节点可以获得更快的速度。</li>
+</ul>
+<h4 id="节点名称标识含义">节点名称标识含义</h4>
 <ul>
 <li>
 <p><strong>禁：</strong></p>

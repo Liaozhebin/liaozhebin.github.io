@@ -1578,7 +1578,7 @@ Portable 便携式软件默认安装到 chocolatey 目录<br>
 <h4 id="启用的仓库：">启用的仓库：</h4>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop bucket add extras nerd<span class="literal">-fonts</span> nonportable</span><br></pre></td></tr></table></figure>
 <h4 id="一键安装以下软件：">一键安装以下软件：</h4>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop install <span class="number">7</span>zip git rufus mpc<span class="literal">-be</span> typora listary sumatrapdf spotify translucenttb flux v2rayN telegram qbittorrent<span class="literal">-portable</span> handbrake honeyview</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop install <span class="number">7</span>zip git rufus mpc<span class="literal">-be</span> typora listary sumatrapdf spotify translucenttb flux v2rayN telegram qbittorrent<span class="literal">-portable</span> handbrake honeyview winscp</span><br></pre></td></tr></table></figure>
 <h5 id="系统工具">系统工具</h5>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop install win32<span class="literal">-disk</span><span class="literal">-imager</span> crystaldiskinfo crystaldiskmark cpu<span class="literal">-z</span> cpu<span class="literal">-v</span> furmark dismplusplus aida64extreme as<span class="literal">-ssd</span> ssd<span class="literal">-z</span></span><br></pre></td></tr></table></figure>
 <h4 id="软件详情：">软件详情：</h4>
@@ -3136,7 +3136,9 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 <blockquote>
 <ol>
 <li>确保手机时间为北京时间</li>
-<li>打开 <code>ShadowRocket APP</code> 复制导入节点</li>
+<li>复制所有节点码</li>
+<li>打开 <code>ShadowRocket APP</code> ，等待5秒，会出现 <strong>导入</strong> 窗口。</li>
+<li>确认导入。</li>
 <li>点击右上角的 <code>开关</code>  开启</li>
 <li>enjoy it …</li>
 </ol>
@@ -3144,11 +3146,19 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 <h3 id="PC-客户端">PC 客户端</h3>
 <h4 id="PC-杀毒安全软件问题">*PC 杀毒安全软件问题</h4>
 <p>条件允许的话，还请大家尽量不要使用 <code>360软件（含浏览器）</code>，下面推荐一些更好的 <code>免费安全软件</code>：</p>
-<p>浏览器的话：强推 <code>Chrome</code> 次选 <code>firefox</code> <code>微软edge</code> <code>Opera</code></p>
+<ul>
+<li>
+<p>浏览器的话：</p>
+<ul>
+<li>强推 <code>Chrome</code> 次选 <code>firefox</code> ；<code>微软edge</code>； <code>Opera</code></li>
+</ul>
+</li>
+<li>
+<p>杀毒软件的话推荐以下：</p>
 <blockquote>
 <ol>
 <li>
-<p><a href="https://www.zhihu.com/question/21085687?sort=created" target="_blank" rel="noopener external nofollow noreferrer">知乎话题—你认为哪款 Windows 杀毒软件最好？</a></p>
+<p><a href="https://www.zhihu.com/question/21085687?sort=created" target="_blank" rel="noopener external nofollow noreferrer">知乎话题推荐—你认为哪款 Windows 杀毒软件最好？</a></p>
 </li>
 <li>
 <p><a href="https://www.avast.com/zh-cn/index" target="_blank" rel="noopener external nofollow noreferrer">Avast</a>：[<strong>强推</strong>]来自捷克的一款优秀杀毒软件</p>
@@ -3165,6 +3175,8 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 <p><a href="https://www.zhihu.com/question/328342935/answer/708544558" target="_blank" rel="noopener external nofollow noreferrer">知乎话题—到底要不要下载360安全卫士？</a></p>
 </blockquote>
 </blockquote>
+</li>
+</ul>
 <h4 id="PC-客户端说明正文">PC 客户端说明正文</h4>
 <p>PC客户端使用 <code>右下角托盘</code> 和 <code>主界面</code> 图进行说明：</p>
 <blockquote>

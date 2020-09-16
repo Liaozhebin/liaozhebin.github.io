@@ -319,7 +319,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
+              <span>2.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -416,7 +416,9 @@
 <blockquote>
 <ol>
 <li>确保手机时间为北京时间</li>
-<li>打开 <code>ShadowRocket APP</code> 复制导入节点</li>
+<li>复制所有节点码</li>
+<li>打开 <code>ShadowRocket APP</code> ，等待5秒，会出现 <strong>导入</strong> 窗口。</li>
+<li>确认导入。</li>
 <li>点击右上角的 <code>开关</code>  开启</li>
 <li>enjoy it …</li>
 </ol>
@@ -424,11 +426,19 @@
 <h3 id="PC-客户端">PC 客户端</h3>
 <h4 id="PC-杀毒安全软件问题">*PC 杀毒安全软件问题</h4>
 <p>条件允许的话，还请大家尽量不要使用 <code>360软件（含浏览器）</code>，下面推荐一些更好的 <code>免费安全软件</code>：</p>
-<p>浏览器的话：强推 <code>Chrome</code> 次选 <code>firefox</code> <code>微软edge</code> <code>Opera</code></p>
+<ul>
+<li>
+<p>浏览器的话：</p>
+<ul>
+<li>强推 <code>Chrome</code> 次选 <code>firefox</code> ；<code>微软edge</code>； <code>Opera</code></li>
+</ul>
+</li>
+<li>
+<p>杀毒软件的话推荐以下：</p>
 <blockquote>
 <ol>
 <li>
-<p><a href="https://www.zhihu.com/question/21085687?sort=created" target="_blank" rel="noopener external nofollow noreferrer">知乎话题—你认为哪款 Windows 杀毒软件最好？</a></p>
+<p><a href="https://www.zhihu.com/question/21085687?sort=created" target="_blank" rel="noopener external nofollow noreferrer">知乎话题推荐—你认为哪款 Windows 杀毒软件最好？</a></p>
 </li>
 <li>
 <p><a href="https://www.avast.com/zh-cn/index" target="_blank" rel="noopener external nofollow noreferrer">Avast</a>：[<strong>强推</strong>]来自捷克的一款优秀杀毒软件</p>
@@ -445,6 +455,8 @@
 <p><a href="https://www.zhihu.com/question/328342935/answer/708544558" target="_blank" rel="noopener external nofollow noreferrer">知乎话题—到底要不要下载360安全卫士？</a></p>
 </blockquote>
 </blockquote>
+</li>
+</ul>
 <h4 id="PC-客户端说明正文">PC 客户端说明正文</h4>
 <p>PC客户端使用 <code>右下角托盘</code> 和 <code>主界面</code> 图进行说明：</p>
 <blockquote>
@@ -662,19 +674,19 @@
           
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-livere">livere</a></li>
             <li class="tab"><a href="#comment-valine">valine</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
         </ul>
         <div class="tab-content">
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="valine-comments"></div>
+            </div>
             <div class="tab-pane livere" id="comment-livere">
               
   <div class="comments">
     <div id="lv-container" data-id="city" data-uid="MTAyMC80ODg5MC8yNTM4NA"></div>
   </div>
   
-            </div>
-            <div class="tab-pane valine" id="comment-valine">
-              <div class="comments" id="valine-comments"></div>
             </div>
         </div>
       </div>
@@ -1301,22 +1313,6 @@ if (document.querySelectorAll('pre.mermaid').length) {
       });
   </script>
 
-<script>
-NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
-  window.livereOptions = {
-    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
-});
-</script>
-
 
 <script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
@@ -1343,6 +1339,22 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       serverURLs : ''
     });
   }, window.Valine);
+});
+</script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
 });
 </script>
 

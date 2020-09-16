@@ -475,7 +475,7 @@ Portable 便携式软件默认安装到 chocolatey 目录<br>
 <h4 id="启用的仓库：">启用的仓库：</h4>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket add extras nerd<span class="literal">-fonts</span> nonportable</span><br></pre></td></tr></table></figure>
 <h4 id="一键安装以下软件：">一键安装以下软件：</h4>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install <span class="number">7</span>zip git rufus mpc<span class="literal">-be</span> typora listary sumatrapdf spotify translucenttb flux v2rayN telegram qbittorrent<span class="literal">-portable</span> handbrake honeyview</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install <span class="number">7</span>zip git rufus mpc<span class="literal">-be</span> typora listary sumatrapdf spotify translucenttb flux v2rayN telegram qbittorrent<span class="literal">-portable</span> handbrake honeyview winscp</span><br></pre></td></tr></table></figure>
 <h5 id="系统工具">系统工具</h5>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install win32<span class="literal">-disk</span><span class="literal">-imager</span> crystaldiskinfo crystaldiskmark cpu<span class="literal">-z</span> cpu<span class="literal">-v</span> furmark dismplusplus aida64extreme as<span class="literal">-ssd</span> ssd<span class="literal">-z</span></span><br></pre></td></tr></table></figure>
 <h4 id="软件详情：">软件详情：</h4>
@@ -664,19 +664,19 @@ Portable 便携式软件默认安装到 chocolatey 目录<br>
           
       <div class="tabs tabs-comment">
         <ul class="nav-tabs">
-            <li class="tab"><a href="#comment-livere">livere</a></li>
             <li class="tab"><a href="#comment-valine">valine</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
         </ul>
         <div class="tab-content">
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="valine-comments"></div>
+            </div>
             <div class="tab-pane livere" id="comment-livere">
               
   <div class="comments">
     <div id="lv-container" data-id="city" data-uid="MTAyMC80ODg5MC8yNTM4NA"></div>
   </div>
   
-            </div>
-            <div class="tab-pane valine" id="comment-valine">
-              <div class="comments" id="valine-comments"></div>
             </div>
         </div>
       </div>
@@ -1303,22 +1303,6 @@ if (document.querySelectorAll('pre.mermaid').length) {
       });
   </script>
 
-<script>
-NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
-  window.livereOptions = {
-    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
-});
-</script>
-
 
 <script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
@@ -1345,6 +1329,22 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       serverURLs : ''
     });
   }, window.Valine);
+});
+</script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
 });
 </script>
 

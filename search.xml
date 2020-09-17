@@ -3181,8 +3181,8 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 <p>PC客户端使用 <code>右下角托盘</code> 和 <code>主界面</code> 图进行说明：</p>
 <blockquote>
 <ol>
-<li>确保手机时间为 <code>北京时间</code></li>
-<li>解压压缩包</li>
+<li>确保电脑时间时间为 <code>北京时间</code></li>
+<li>解压压缩包 （解压的目录不能有中文字符）</li>
 <li>打开文件夹里的 <code>v2rayN.exe</code></li>
 <li>看 <code>右下角托盘图</code> 进行设置，
 <ol>

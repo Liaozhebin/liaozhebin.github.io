@@ -379,13 +379,25 @@
 <li>
 <p>然后在 <a href="https://github.com/stascorp/rdpwrap/issues" target="_blank" rel="noopener external nofollow noreferrer">Github issue</a> 里面找到别人发布包含你这个版本的 <code>rdpwrap.ini</code> 替换 <code>C:\Program Files\RDP Wrapper</code> 目录里面的 <code>rdpwrap.ini</code>文件。</p>
 <blockquote>
-<p>如果替换时显示文件被占用，我们可以用 CMD 命令<code>net stop &quot;Remote Desktop Services&quot; </code> 暂停远程桌面服务对文件的占用后再进行覆盖替换，替换成功后运行 CMD 命令 <code>net start &quot;Remote Desktop Services&quot;</code> 重新开启服务。</p>
+<p>如果替换时显示文件被占用，我们可以用 CMD 命令</p>
+<ul>
+<li><code>net stop &quot;Remote Desktop Services&quot;</code> 暂停远程桌面服务对文件的占用后再进行覆盖替换</li>
+<li>替换成功后运行 CMD 命令 <code>net start &quot;Remote Desktop Services&quot;</code> 重新开启服务。</li>
+</ul>
 </blockquote>
 </li>
 <li>
 <p>这时，再次打开  <code>RDPConf.exe</code> ，应该就能看到 <strong>4</strong> 个绿色状态的检查结果了，说明安装成功，可以正常使用了。</p>
 <blockquote>
-<p>如果看到 <strong>4</strong> 个绿色状态的检查结果，但是还是不能正常使用，可以尝试再次运行 CMD 命令关闭远程服务: <code>net stop &quot;Remote Desktop Services&quot;，远程服务暂停后运行 CMD 命令 </code>net start “Remote Desktop Services”` 重新开启服务。</p>
+<p>如果看到 <strong>4</strong> 个绿色状态的检查结果，但是还是不能正常使用：</p>
+<ul>
+<li>
+<p>可以尝试再次运行 CMD 命令： <code>net stop &quot;Remote Desktop Services&quot;</code> 关闭远程服务；</p>
+</li>
+<li>
+<p>等待远程服务暂停后运行 CMD 命令： <code>net start &quot;Remote Desktop Services&quot;</code> 重新开启服务。</p>
+</li>
+</ul>
 </blockquote>
 </li>
 </ol>
@@ -1010,12 +1022,12 @@ if(canvas.getContext){
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">54k</span>
+    <span title="站点总字数">55k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">49 分钟</span>
+    <span title="站点阅读时长">50 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener external nofollow noreferrer" target="_blank">NexT.Pisces</a> 强力驱动
   </div>

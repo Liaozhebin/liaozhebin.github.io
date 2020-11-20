@@ -1494,7 +1494,7 @@
 <h3 id="搜索软件-查看软件信息">搜索软件/查看软件信息</h3>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 搜索安卓相关软件</span></span><br><span class="line">scoop search android</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看 Android Studio 的软件信息</span></span><br><span class="line">scoop info android<span class="literal">-studio</span>    <span class="comment"># 可以查看到版本号和软件描述核对软件信息</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看软件的依赖：</span></span><br><span class="line">scoop depends v2rayn</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看软件位置</span></span><br><span class="line">scoop which &lt;app_name&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="安装-卸载-更新-已安装-软件：">安装/卸载/更新/已安装 软件：</h3>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">scoop install &lt;softeware&gt; <span class="comment"># 添加 --global 参数给所有用户安装，添加sudo使用管理员权限</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">scoop uninstall scoop <span class="comment">#卸载 scoop 自己, --purge 参数清除持久化数据 persit, 卸载后对应软件的下载 cache 仍然保留</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新</span></span><br><span class="line">scoop update curl 	<span class="comment">#更新指定的 curl</span></span><br><span class="line">scoop update *      <span class="comment"># 更新所有软件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看已安装的的软件</span></span><br><span class="line">scoop list adopt <span class="comment"># 列出已安装名字中带有 adopt 的软件，不填写则列出所有已安装软件</span></span><br><span class="line">scoop export</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">scoop install &lt;softeware&gt; <span class="comment"># 添加 --global 参数给所有用户安装，添加sudo使用管理员权限</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">scoop uninstall scoop <span class="comment">#卸载 scoop 自己, --purge 参数清除持久化数据 persit, 卸载后对应软件的下载 cache 仍然保留</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新</span></span><br><span class="line">scoop status 	<span class="comment">#查看可以更新的软件</span></span><br><span class="line">scoop update curl 	<span class="comment">#更新指定的 curl</span></span><br><span class="line">scoop update *      <span class="comment"># 更新所有软件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看已安装的的软件</span></span><br><span class="line">scoop list adopt <span class="comment"># 列出已安装名字中带有 adopt 的软件，不填写则列出所有已安装软件</span></span><br><span class="line">scoop export</span><br></pre></td></tr></table></figure>
 <h3 id="Bucket-仓库管理：">Bucket 仓库管理：</h3>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop bucket known   <span class="comment">#查看已知仓库源</span></span><br><span class="line">scoop bucket add extras  <span class="comment">#添加 extras 仓库；需要一行一个命令添加仓库，不能一行连续输入好几个仓库</span></span><br></pre></td></tr></table></figure>
 <h3 id="软件管理-清除缓存：">软件管理/清除缓存：</h3>
@@ -1695,6 +1695,8 @@ Portable 便携式软件默认安装到 chocolatey 目录<br>
 <h5 id="数据库工具-Heidisql">数据库工具 - Heidisql</h5>
 <p><a href="https://www.heidisql.com/" target="_blank" rel="noopener external nofollow noreferrer">heidisql</a></p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop install heidisql</span><br></pre></td></tr></table></figure>
+<h5 id="待整理的">待整理的</h5>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">scoop search chrome #内有各种版本，包含便携版</span><br><span class="line">scoop search firefox #各种版本</span><br><span class="line">scoop search  $&#123;各大浏览器&#125;</span><br><span class="line">scoop search libreoffice # 350MB；基于协议libreoffice可以吸收openoffice的精华</span><br><span class="line">scoop search calibre #电纸书编辑工具</span><br><span class="line">scoop search wps #国际版WPS 148MB</span><br><span class="line">mpc-be</span><br><span class="line">mpc-hc</span><br><span class="line">github</span><br><span class="line">deskpin</span><br><span class="line">ytmdesktop &#x2F;&#x2F; YouTube音乐第三方桌面版</span><br><span class="line">captura &#x2F;&#x2F;开源轻量录屏工具 4M</span><br><span class="line">foxit #国际版福昕阅读器 64MB</span><br></pre></td></tr></table></figure>
 <h3 id="终端工具-Windows-Terminal">终端工具 - Windows Terminal</h3>
 <h4 id="Windows-Terminal">Windows Terminal</h4>
 <blockquote>
@@ -3187,8 +3189,8 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
         <category>Demo 演示</category>
       </categories>
       <tags>
-        <tag>Markdown</tag>
         <tag>Demo 演示</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -3242,11 +3244,18 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 <p>因V2Ray设置较复杂，如无特殊情况，统一从采用 <code>从剪切板导入</code>  的方式批量添加节点</p>
 </blockquote>
 <h3 id="从剪切板导入">从剪切板导入</h3>
-<p>复制一大长串你看不懂的 “有序字符”，然后点击从剪切板导入即可一次性添加所有节点信息</p>
+<ol>
+<li>
+<p>在这里你需要对 <code>节点码</code> 有一个认知（了解它大概长什么样子）。</p>
 <blockquote>
-<p>“有序字符”，长下面这个样子，仅仅是举例，可以尝试导入，但不是有效节点。<br>
+<p>节点码的是一大长串你看不懂的“有序字符”，长下面这个样子，仅仅是举例，可以尝试复制导入，但不是有效节点。<br>
 <small>vmess://ew0KICAidiI6ICIyIiwNCiAgInBzIjogInYycmF55paw5Yqg5Z2hTmV0ZmxpeC1jbG9uZSIsDQogICJhZGQiOiAic2cudGlrdG9rLnBhZ2UiLA0KICAicG9ydCI6ICI0NDMiLA0KICAiaWQiOiAiODk2M2Y1ZDgtZTRkYy0zMzY4LTk0NmQtZGYwN2UyMDc4M2M5IiwNCiAgImFpZCI6ICIxNiIsDQogICJuZXQiOiAid3MiLA0KICAidHlwZSI6ICJub25lIiwNCiAgImhvc3QiOiAic2cudGlrdG9rLnBhZ2UiLA0KICAicGF0aCI6ICIvdjJyYXkiLA0KICAidGxzIjogInRscyINCn0= </small></p>
 </blockquote>
+</li>
+<li>
+<p>复制所有节点码（确定节点码是你所认知的样子），然后点击从剪切板导入即可一次性添加所有节点信息 （这一步具体详见下面每个客户端的操作）</p>
+</li>
+</ol>
 <h2 id="客户端使用说明">*客户端使用说明</h2>
 <h3 id="Android-客户端">Android 客户端</h3>
 <p>安卓客户端分成2张图进行说明，分别为<code>主界面</code>和<code>设置界面</code></p>
@@ -3270,6 +3279,8 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 <h3 id="IOS-客户端">IOS-客户端</h3>
 <p>仅用文字进行说明：</p>
 <blockquote>
+<p>一步一步来，不可跳过下面的每一个步骤</p>
+<blockquote>
 <ol>
 <li>确保手机时间为北京时间</li>
 <li>复制所有节点码</li>
@@ -3278,6 +3289,7 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 <li>点击右上角的 <code>开关</code>  开启</li>
 <li>enjoy it …</li>
 </ol>
+</blockquote>
 </blockquote>
 <h3 id="PC-客户端">PC 客户端</h3>
 <h4 id="PC-杀毒安全软件问题">*PC 杀毒安全软件问题</h4>
@@ -3449,8 +3461,8 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
         <category>Demo 演示</category>
       </categories>
       <tags>
-        <tag>Demo 演示</tag>
         <tag>Hello World</tag>
+        <tag>Demo 演示</tag>
       </tags>
   </entry>
 </search>

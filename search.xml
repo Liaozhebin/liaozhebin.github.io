@@ -1696,7 +1696,7 @@ Portable 便携式软件默认安装到 chocolatey 目录<br>
 <p><a href="https://www.heidisql.com/" target="_blank" rel="noopener external nofollow noreferrer">heidisql</a></p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop install heidisql</span><br></pre></td></tr></table></figure>
 <h5 id="待整理的">待整理的</h5>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">scoop search chrome #内有各种版本，包含便携版</span><br><span class="line">scoop search firefox #各种版本</span><br><span class="line">scoop search  $&#123;各大浏览器&#125;</span><br><span class="line">scoop search libreoffice # 350MB；基于协议libreoffice可以吸收openoffice的精华</span><br><span class="line">scoop search calibre #电纸书编辑工具</span><br><span class="line">scoop search wps #国际版WPS 148MB</span><br><span class="line">mpc-be</span><br><span class="line">mpc-hc</span><br><span class="line">github</span><br><span class="line">deskpin</span><br><span class="line">ytmdesktop &#x2F;&#x2F; YouTube音乐第三方桌面版</span><br><span class="line">captura &#x2F;&#x2F;开源轻量录屏工具 4M</span><br><span class="line">foxit #国际版福昕阅读器 64MB</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">scoop search chrome #内有各种版本，包含便携版</span><br><span class="line">scoop search firefox #各种版本</span><br><span class="line">scoop search  $&#123;各大浏览器&#125;</span><br><span class="line">scoop search libreoffice # 350MB；基于协议libreoffice可以吸收openoffice的精华</span><br><span class="line">scoop search calibre #电纸书编辑工具</span><br><span class="line">scoop search wps #国际版WPS 148MB</span><br><span class="line">mpc-be</span><br><span class="line">mpc-hc</span><br><span class="line">github</span><br><span class="line">deskpin</span><br><span class="line">ytmdesktop &#x2F;&#x2F; YouTube音乐第三方桌面版</span><br><span class="line">captura &#x2F;&#x2F;开源轻量录屏工具 4M</span><br><span class="line">foxit #国际版福昕阅读器 64MB\</span><br><span class="line">speedtest-cli # Ookla speedtest-cli</span><br><span class="line">iperf3</span><br><span class="line">adb</span><br><span class="line">scrcpy ## 安卓adb屏幕映射</span><br></pre></td></tr></table></figure>
 <h3 id="终端工具-Windows-Terminal">终端工具 - Windows Terminal</h3>
 <h4 id="Windows-Terminal">Windows Terminal</h4>
 <blockquote>
@@ -3321,6 +3321,8 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 <blockquote>
 <p><a href="https://www.zhihu.com/question/64616904" target="_blank" rel="noopener external nofollow noreferrer">知乎话题—360 杀毒的真实水平怎么样？</a></p>
 <p><a href="https://www.zhihu.com/question/328342935/answer/708544558" target="_blank" rel="noopener external nofollow noreferrer">知乎话题—到底要不要下载360安全卫士？</a></p>
+<p>【安全事件】：</p>
+<p><a href="https://www.zhihu.com/question/439768601" target="_blank" rel="noopener external nofollow noreferrer">知乎话题：如何看待 QQ 偷偷读取用户所有浏览器的历史记录？</a></p>
 </blockquote>
 </blockquote>
 </li>
@@ -3330,15 +3332,17 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 <blockquote>
 <ol>
 <li>确保电脑时间时间为 <code>北京时间</code></li>
-<li>解压压缩包 （解压的目录不能有中文字符）</li>
+<li>解压压缩包 <strong>（解压的目录不能有中文字符）</strong></li>
 <li>打开文件夹里的 <code>v2rayN.exe</code></li>
 <li>看 <code>右下角托盘图</code> 进行设置，
 <ol>
 <li>先添加节点  <code>从剪切板导入URL节点 </code></li>
-<li>选择 <code>服务器节点</code> 并选择 <code>PAC代理</code> 模式`</li>
+<li>选择合适的 <code>服务器节点</code></li>
+<li>选择图中的 <code>路由</code> 模式</li>
+<li>选择图中的 <code>代理</code> 模式</li>
 </ol>
 </li>
-<li>其他更多操作参考主界面图 <code>服务器速度测试</code> &amp;&amp; <code>服务器延迟测试</code></li>
+<li>其他更多高级操作参考主界面图 <code>服务器速度测试</code> &amp;&amp; <code>服务器延迟测试</code></li>
 <li>enjoy it …</li>
 </ol>
 </blockquote>
@@ -3348,7 +3352,7 @@ Github的Markdown语法支持添加emoji表情，输入不同的符号码（两�
 </blockquote>
 <p>【右下角托盘图】：</p>
 <blockquote>
-<p><img data-src="https://i.loli.net/2020/02/02/XoshcCP5iOAnrRt.png" alt="PC-托盘解释.png"></p>
+<p><img data-src="https://i.loli.net/2021/01/28/1WgncukzrVw92Yf.png" alt="PC-托盘解释.png"></p>
 </blockquote>
 <h3 id="Q-A-PC-客户端存在的问题">Q&amp;A PC 客户端存在的问题</h3>
 <p>个人测试发现，PC客户端似乎存在一定的不稳定性：</p>
